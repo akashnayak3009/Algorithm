@@ -31,7 +31,6 @@
 // // Reverse the elements from index 2 to 3 (inclusive)
 // console.log(arrayReverseIndex(array, 2, 3)); // Output: [5, 4, 8, 9, 7, 3]
 
-
 // Palindrome Number-> Read the number same forward and same backward.
 
 // function palindrome(num){
@@ -41,12 +40,11 @@
 // const nums=121;
 // console.log(palindrome(nums))
 
-
 //fibonaccci Number--> adding of digit and getting sum of their digit as their resulting digit.
 
 // function fibonacci(x){
 
-    // FIRST METHOD 
+// FIRST METHOD
 // return x<=1?x:fibonacci(x-1) + fibonacci(x-2); //by recursion
 
 //second method
@@ -59,3 +57,29 @@
 // }
 // console.log(fibonacci(6));
 
+//Anaagram--> A anagram is a word or phrase formed by rearranging the letters of a different word or phrase, using all the original
+//letters exactly once
+
+//    function anagram(arr, ana){
+//     var x=arr.split("").sort().join("");
+//     var y=ana.split("").sort().join("");
+//     return x.length===y.length? x===y : false;
+//     }
+//    const arr ="anagram";
+//    const anag="nagaam"
+//    console.log(anagram(arr, anag));
+
+// Two sum
+// function twoSum(arr, n) {
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             if (arr[i] + arr[j] === n) {
+//                 return [arr[i], arr[j]]; // Return as an array
+//             }
+//         }
+//     }
+//     return []; // Return an empty array if no match is found
+// }
+
+// const nums = [5, 4, 7, 8, 7, 9];
+// console.log(twoSum(nums, 13));
