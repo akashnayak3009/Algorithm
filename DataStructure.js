@@ -30,3 +30,32 @@
 
 // // Reverse the elements from index 2 to 3 (inclusive)
 // console.log(arrayReverseIndex(array, 2, 3)); // Output: [5, 4, 8, 9, 7, 3]
+
+
+// Palindrome Number-> Read the number same forward and same backward.
+
+// function palindrome(num){
+//      return num>0? num=== +num.toString().split('').reverse().join(""): false;  //through the javascript function
+// }
+
+// const nums=121;
+// console.log(palindrome(nums))
+
+
+//fibonaccci Number--> adding of digit and getting sum of their digit as their resulting digit.
+
+// function fibonacci(x){
+
+    // FIRST METHOD 
+// return x<=1?x:fibonacci(x-1) + fibonacci(x-2); //by recursion
+
+//second method
+// if(x<0) return;
+// const arr =[0,1];
+// for (let i=2;i<=x;i++){
+//     arr.push(arr[i-1]+arr[i-2]);
+// }
+// return arr[x];
+// }
+// console.log(fibonacci(6));
+
