@@ -199,3 +199,33 @@
 // }
 
 // console.log(armstrong(47))
+
+//PANAGRAM
+
+// function isPanagram(str){
+//     const alpha='abcdefghijklmnopqrstuvwxyz'
+//     const lowerStr = str.toLowerCase();
+
+//     for(const char of alpha){
+//         if(!lowerStr.includes(char)){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// const sentence =" The quick brown fox jumps er the lazy dog";
+
+// console.log(isPanagram(sentence));
+
+// function isPanagram(str){
+//     const newStr = str.toLowerCase().replace(/[^a-z]/g, '');
+
+//     const uniqueChars =new Set(newStr);
+
+//     return uniqueChars.size === 26;
+// }
+
+// const sentence =" The quick brown fox jumps over the lazy dog";
+
+// console.log(isPanagram(sentence));
