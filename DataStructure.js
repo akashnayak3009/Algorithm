@@ -92,7 +92,6 @@
 // });
 // console.log(uniqueArray);
 
-
 //find the max and min number of array;
 
 // const array=[4,5,7,8,1,9,0];
@@ -111,7 +110,6 @@
 //     })
 // }
 // console.log(minNumber(array))
-
 
 //SECOND LARGEST NUMBER
 
@@ -163,7 +161,7 @@
 //           return "Not a prime";
 //         }
 //       }
-    
+
 //       return "It's a prime";
 
 // }
@@ -229,3 +227,180 @@
 // const sentence =" The quick brown fox jumps over the lazy dog";
 
 // console.log(isPanagram(sentence));
+
+// function rotate(nums, n) {
+//     const N = nums.length;
+//     const newArray = [];
+//     const B = n % N;
+//     for (var i = 0; i < N; i++) {
+//       const expectedPosition = (i + N - B) % N;
+//       newArray[expectedPosition] = nums[i];
+//     }
+//     return newArray;
+//   }
+
+//   console.log(rotate([5, 4, 6, 7, 2, 1], 4).join(" "));
+
+// function maxandmin(arr){
+//     let max=arr[0];
+//     let min=arr[0];
+//     for(var i =0; i<arr.length;i++){
+//         if(arr[i]>max){
+//             max=arr[i];
+//         }
+//          else if(arr[i]<min){
+//             min=arr[i];
+//         }
+//     }
+//     return [max,min]
+// }
+// console.log(maxandmin([45,10,8,7,90,56,9,1]));
+
+// function findArray(arr,n){
+//     for (var i=0;i<arr.length;i++){
+//         if(n===arr[i]) {
+//             return "INDEX AT: " + i;
+//         }
+//     }
+//     return "Not found";
+// }
+// const arr=[78,8,89,1,2,7,5];
+// console.log(findArray(arr,78))
+
+// function secondLargest(nums){
+//     let max=nums[0];
+//     for(var i=0;i<nums.length;i++){
+//         if(nums[i]>max){
+//             max=nums[i];
+//         }
+//     }
+//     const secondArr= arr.filter(number=>number!=max);
+//     let secMax=nums[0];
+//     for(var i=0;i<secondArr.length;i++){
+//         if(secondArr[i]>secMax){
+//             secMax=secondArr[i];
+//         }
+//     }
+//     return secMax;
+// }
+// const arr=[78,8,89,1,2,7,5];
+// console.log(secondLargest(arr))
+
+// function maxSubractMin(nums){
+
+//     let max= nums[0];
+//     let min= nums[1];
+
+//     for(var i=0; i<nums.length;i++){
+//        if(i%2==0){
+//         if(arr[i]>max){
+//             max=arr[i];
+//         }
+//        }else{
+//         if(arr[i]<min){
+//             min=arr[i];
+//         }
+//        }
+//     }
+//     return max-min;
+// }
+//  const arr=[8,99,1,92,7,95,80,91];
+//  console.log(maxSubractMin(arr));
+
+// function oddAndEven(nums){
+//     let odd=[];
+//     let even=[];
+
+//     for(var i=0;i<nums.length;i++){
+//         if(nums[i]%2===0){
+//             even[i]=nums[i];
+//         }
+//         else{
+//             odd[i]=nums[i];
+//         }
+//     }
+//     const newOdd=odd.filter(number => number !== undefined && number !== null && number !== '');
+//     const newEven=even.filter(number => number !== undefined && number !== null && number !== '');
+//     return{newOdd, newEven};
+// }
+// const arr=[8,99,1,92,7,95,80,91];
+// console.log(oddAndEven(arr));
+
+// function sumArray(num, a, b) {
+//     if (a > b || a > num.length || b > num.length || a === b)
+//         return "Wrong Input";
+//         let sum = 0;
+//         for (var i = a - 1; i < b; i++) {
+//             sum += num[i];
+//         }
+//         return sum;
+//     }
+
+// const arr = [8, 99, 1, 92, 7, 95];
+// console.log(sumArray(arr, 4, 5));
+
+// function isOver(num,n,m){
+//     if(n>m) return "wrong input"
+//     let sum =0;
+//     for(var i=n-1; i<m-1;i++){
+//         sum = num[m-1]-num[n-1]
+//     }
+//     return sum;
+// }
+
+// const input =[1,2,3,4,50,6,70,8,90,10];
+// console.log(isOver(input,5,9));
+
+// function equilibrium(nums, q) {
+//     if (q > nums.length) return "Wrong input";
+
+//     let sum = 0;
+//     let sum1 = 0;
+
+//     for (var i = 0; i < q; i++) {
+//         sum += nums[i];
+//     }
+
+//     for (var i = q; i < nums.length; i++) {
+//         sum1 += nums[i];
+//     }
+
+//     return sum1===sum ? "This is equilibrium index" : "Not equilibrium index";
+
+// }
+
+// const input = [3, 4, 3, 5, 5];
+// console.log(equilibrium(input, 3));
+
+
+// function allEvenNoIndexSum(nums){
+//     let sum=0;
+
+//     for(var i=0; i<nums.length;i++){
+//         if(i%2===0){
+//             sum += nums[i];
+//         }
+//     }
+//     return sum;
+// }
+
+// const input = [3, 4, 3, 5, -5];
+// console.log(allEvenNoIndexSum(input));
+
+
+
+// function allOddNoIndexSum(nums){
+//     let sum=0;
+
+//     for(var i=0; i<nums.length;i++){
+//         if(i%2!==0){
+//             sum += nums[i];
+//         }
+//     }
+//     return sum;
+// }
+
+// const input = [3, 4, 3, -5, -5];
+// console.log(allOddNoIndexSum(input));
+
+
