@@ -404,3 +404,116 @@
 // console.log(allOddNoIndexSum(input));
 
 
+// function equilibrium(nums){
+//     let totalSum=0;
+//     for(var i=0;i<nums.length;i++){
+//      totalSum +=nums[i];
+//     }
+//     let leftSum=0;
+//     for(var i=0;i<nums.length;i++){
+//         rightSum = totalSum  - leftSum -nums[i];
+//         if(rightSum === leftSum){
+//             return i;
+//         }
+//         leftSum+=nums[i];
+//     }
+//     return -1;
+// }
+// const number = [-7, 1, 5, 2, -4, 3, 0];
+// console.log(equilibrium(number));
+
+// function countIndices(arr) {
+//     const n = arr.length;
+//     let evenSum = 0;
+//     let oddSum = 0;
+//     let count = 0;
+  
+//     // Calculate the sum of even-indexed and odd-indexed elements
+//     for (let i = 0; i < n; i++) {
+//         if (i % 2 === 0) {
+//             evenSum += arr[i];
+//         } else {
+//             oddSum += arr[i];
+//         }
+//     }
+  
+//     // Initialize the prefix sums
+//     let prefixEvenSum = 0;
+//     let prefixOddSum = 0;
+  
+//     // Iterate through the array and check if removing an element satisfies the condition
+//     for (let i = 0; i < n; i++) {
+//         if (i % 2 === 0) {
+//             if (prefixEvenSum + oddSum - prefixOddSum === prefixOddSum + evenSum - prefixEvenSum - arr[i]) {
+//                 count++;
+//             }
+//             prefixEvenSum += arr[i];
+//         } else {
+//             if (prefixEvenSum + oddSum - prefixOddSum - arr[i] === prefixOddSum + evenSum - prefixEvenSum) {
+//                 count++;
+//             }
+//             prefixOddSum += arr[i];
+//         }
+//     }
+  
+//     return count;
+// }
+
+// // Example usage:
+// const input1 = [2, 1, 6, 4];
+// const input2 = [1, 1, 1];
+
+// console.log(countIndices(input1)); // Output: 1
+// console.log(countIndices(input2)); // Output: 3
+
+
+// function findSum(array, D) {
+//     const result=[];
+//    for(let i=0;i<D.length;i++){
+//     const [L, R] = D[i];
+//     let sum=0;
+//     for(let j=L;j<=R;j++){
+//         sum +=array[j];
+//     }
+//     result.push(sum)
+//    }
+//    return result;
+//   }
+
+// const A = [1, 2, 3, 4, 5]
+// const B = [[0, 3], [1, 2]]
+// console.log(findSum(A,B))
+
+// const C = [2, 2, 2]
+// const D = [[0, 0], [1, 2]]
+// console.log(findSum(C,D))
+
+
+// function minimumTime(A){
+//     let totalSum=0;
+//     let max=0;
+//     let B=0;
+//     for(let i=0;i<A.length;i++){
+//         totalSum += A[i];
+//         if(max<A[i]){
+//             max=A[i];
+//         }
+//          B = max*A.length;
+//     }
+//     return B-totalSum;
+// }
+
+// const A =[2, 4, 1, 3, 2];
+// console.log(minimumTime(A))
+
+// function productArray(A){
+//     const result=[];
+//     const productAll= A.reduce((prev,curr)=>prev*curr);
+//     for(var i=0;i<A.length;i++){
+//         result.push(productAll/A[i]);
+//     }
+//     return result;
+// };
+
+// const B = [1,2,3,4,5];
+// console.log(productArray(B));
