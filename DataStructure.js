@@ -517,3 +517,53 @@
 
 // const B = [1,2,3,4,5];
 // console.log(productArray(B));
+
+// function twoPair(str){
+//     let count =0;
+//     for(var i=0;i<str.length;i++){
+//         if(str[i]=='a'){        
+//             for(var j=i+1;j<str.length;j++){
+//                 if(str[j]==='g' && str[i]<str[j]){
+//                     count ++
+//                 }
+//             }
+//         }
+//     }
+//         return count;
+// }
+
+// const alpha =['a','d','g','a','g','a','g','f','g'];
+// console.log(twoPair(alpha))
+
+// function twoPair(str){          //more optimised one
+//     let count=0;
+//     let sum=0;
+//     for(i=str.length-1; i>=0;i--){
+//         if(str[i]=='g'){    
+//             count++;
+//         }
+//         else if(str[i]=='a'){
+//             sum=sum+count;
+//         }                                          
+//     }
+//     return sum;
+// }
+// const alpha =['a','d','g','a','g','a','g','f','g'];
+// console.log(twoPair(alpha))
+
+// function twoPair(str){
+//     let count =0;
+//     for(var i=0;i<str.length;i++){
+//         if(str[i]==='a'){
+//             if(str[i+1]==='g'){
+//                 count ++;
+//             }
+//         }
+//     }
+//     return  count;
+// }
+// const alpha =['a','d','f','a','d','e','a','g','g'];
+// console.log(twoPair(alpha))
+
+
+
