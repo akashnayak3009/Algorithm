@@ -372,7 +372,6 @@
 // const input = [3, 4, 3, 5, 5];
 // console.log(equilibrium(input, 3));
 
-
 // function allEvenNoIndexSum(nums){
 //     let sum=0;
 
@@ -387,8 +386,6 @@
 // const input = [3, 4, 3, 5, -5];
 // console.log(allEvenNoIndexSum(input));
 
-
-
 // function allOddNoIndexSum(nums){
 //     let sum=0;
 
@@ -402,7 +399,6 @@
 
 // const input = [3, 4, 3, -5, -5];
 // console.log(allOddNoIndexSum(input));
-
 
 // function equilibrium(nums){
 //     let totalSum=0;
@@ -427,7 +423,7 @@
 //     let evenSum = 0;
 //     let oddSum = 0;
 //     let count = 0;
-  
+
 //     // Calculate the sum of even-indexed and odd-indexed elements
 //     for (let i = 0; i < n; i++) {
 //         if (i % 2 === 0) {
@@ -436,11 +432,11 @@
 //             oddSum += arr[i];
 //         }
 //     }
-  
+
 //     // Initialize the prefix sums
 //     let prefixEvenSum = 0;
 //     let prefixOddSum = 0;
-  
+
 //     // Iterate through the array and check if removing an element satisfies the condition
 //     for (let i = 0; i < n; i++) {
 //         if (i % 2 === 0) {
@@ -455,7 +451,7 @@
 //             prefixOddSum += arr[i];
 //         }
 //     }
-  
+
 //     return count;
 // }
 
@@ -465,7 +461,6 @@
 
 // console.log(countIndices(input1)); // Output: 1
 // console.log(countIndices(input2)); // Output: 3
-
 
 // function findSum(array, D) {
 //     const result=[];
@@ -487,7 +482,6 @@
 // const C = [2, 2, 2]
 // const D = [[0, 0], [1, 2]]
 // console.log(findSum(C,D))
-
 
 // function minimumTime(A){
 //     let totalSum=0;
@@ -521,7 +515,7 @@
 // function twoPair(str){
 //     let count =0;
 //     for(var i=0;i<str.length;i++){
-//         if(str[i]=='a'){        
+//         if(str[i]=='a'){
 //             for(var j=i+1;j<str.length;j++){
 //                 if(str[j]==='g' && str[i]<str[j]){
 //                     count ++
@@ -539,12 +533,12 @@
 //     let count=0;
 //     let sum=0;
 //     for(i=str.length-1; i>=0;i--){
-//         if(str[i]=='g'){    
+//         if(str[i]=='g'){
 //             count++;
 //         }
 //         else if(str[i]=='a'){
 //             sum=sum+count;
-//         }                                          
+//         }
 //     }
 //     return sum;
 // }
@@ -565,5 +559,17 @@
 // const alpha =['a','d','f','a','d','e','a','g','g'];
 // console.log(twoPair(alpha))
 
-
-
+// function leader(str){
+//     let N =str.length;
+//     let count=0;
+//     let leaders = [str[N-1]];
+//     for(var i =N-2;i>=0;i--){
+//         if(str[i]>leaders[0]){
+//             leaders.unshift(str[i]);
+//         }
+//     }
+//     count = leaders.length;
+//     return count;
+// }
+// const alpha = [7, 7,7];
+// console.log(leader(alpha));
