@@ -573,3 +573,58 @@
 // }
 // const alpha = [7, 7,7];
 // console.log(leader(alpha));
+
+// function sequence(str){
+//     const a = str.toUpperCase().split("");
+//     const n=a.length;
+//     let count = 0;
+//     let  ans =0;
+//     for(var i=n-1; i>=0;i--){
+//         if(a[i]=="G"){
+//             count++
+//         }else if(a[i]=="A"){
+//             ans = ans+count;
+//         }
+//     }
+//     return ans;
+// }
+
+// const alpha ="ABCGAG";
+// console.log(sequence(alpha));
+// const alpha1="GAB";
+// console.log(sequence(alpha1));
+
+function smallestSubarrayWithMinMax(A) {
+    const n = A.length;
+    let minIdx = -1;
+    let maxIdx = -1;
+    
+    // Find the indices of the minimum and maximum values
+    let minValue = Infinity;
+    let maxValue = -Infinity;
+    
+    for (let i = 0; i < n; i++) {
+        if (A[i] < minValue) {
+            minValue = A[i];
+            minIdx = i;
+        }
+        if (A[i] > maxValue) {
+            maxValue = A[i];
+            maxIdx = i;
+        }
+    }
+    
+    // Calculate the smallest subarray length containing both min and max values
+    const subarrayLength = Math.abs(maxIdx - minIdx) + 1;
+    
+    return subarrayLength;
+}
+
+// Example usage:
+const A1 = [1, 3, 2];
+const A2 = [2, 6, 1, 6, 9];
+console.log(smallestSubarrayWithMinMax(A1)); // Output: 2
+console.log(smallestSubarrayWithMinMax(A2)); // Output: 3
+
+
+
