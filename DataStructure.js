@@ -594,37 +594,61 @@
 // const alpha1="GAB";
 // console.log(sequence(alpha1));
 
-function smallestSubarrayWithMinMax(A) {
-    const n = A.length;
-    let minIdx = -1;
-    let maxIdx = -1;
+// function smallestSubarrayWithMinMax(A) {
+//     const n = A.length;
+//     let minIdx = -1;
+//     let maxIdx = -1;
     
-    // Find the indices of the minimum and maximum values
-    let minValue = Infinity;
-    let maxValue = -Infinity;
+//     // Find the indices of the minimum and maximum values
+//     let minValue = Infinity;
+//     let maxValue = -Infinity;
     
-    for (let i = 0; i < n; i++) {
-        if (A[i] < minValue) {
-            minValue = A[i];
-            minIdx = i;
-        }
-        if (A[i] > maxValue) {
-            maxValue = A[i];
-            maxIdx = i;
-        }
-    }
+//     for (let i = 0; i < n; i++) {
+//         if (A[i] < minValue) {
+//             minValue = A[i];
+//             minIdx = i;
+//         }
+//         if (A[i] > maxValue) {
+//             maxValue = A[i];
+//             maxIdx = i;
+//         }
+//     }
     
-    // Calculate the smallest subarray length containing both min and max values
-    const subarrayLength = Math.abs(maxIdx - minIdx) + 1;
+//     // Calculate the smallest subarray length containing both min and max values
+//     const subarrayLength = Math.abs(maxIdx - minIdx) + 1;
     
-    return subarrayLength;
-}
+//     return subarrayLength;
+// }
 
-// Example usage:
-const A1 = [1, 3, 2];
-const A2 = [2, 6, 1, 6, 9];
-console.log(smallestSubarrayWithMinMax(A1)); // Output: 2
-console.log(smallestSubarrayWithMinMax(A2)); // Output: 3
+// // Example usage:
+// const A1 = [1, 3, 2];
+// const A2 = [2, 6, 1, 6, 9];
+// console.log(smallestSubarrayWithMinMax(A1)); // Output: 2
+// console.log(smallestSubarrayWithMinMax(A2)); // Output: 3
 
 
 
+// function moveZeroes(nums) {
+//     let nonZeroIndex = 0;
+
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] !== 0) {
+//             nums[nonZeroIndex] = nums[i];
+//             nonZeroIndex++;
+//         }
+//     }
+
+//     for (let i = nonZeroIndex; i < nums.length; i++) {
+//         nums[i] = 0;
+//     }
+// }
+
+// // Example 1
+// let nums1 = [0, 1, 0, 3, 12];
+// moveZeroes(nums1);
+// console.log(nums1); // Output: [1, 3, 12, 0, 0]
+
+// // Example 2
+// let nums2 = [0];
+// moveZeroes(nums2);
+// console.log(nums2); // Output: [0]
