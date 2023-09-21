@@ -652,3 +652,46 @@
 // let nums2 = [0];
 // moveZeroes(nums2);
 // console.log(nums2); // Output: [0]
+
+
+// var containsDuplicate = function(nums) {
+//     for(var i=0;i<nums.length;i++){
+//         for(var j=i+1;j<nums.length;j++){
+//             if(nums[i]===nums[j]){
+//                 return true;
+//             }
+//         }
+//     }
+//     return false;
+// };
+
+// var containsDuplicate = function(nums) {
+//     let numArray = new Set();
+
+//     for( const num of nums){
+//         if(numArray.has(num)){
+//             return true;
+//         }
+//         numArray.add(num)
+//     }
+//     return false;
+// };
+
+// function inc(a,b){
+
+//     if(a.length > b.length){
+
+//     }else( a.length<b.length){
+       
+//     }
+// }
+
+// const nums1 = [1,2,2,1];
+// const  nums2 = [2,2];
+
+// console.log(inc(nums1, nums2));
+
+// const nums3 = [4,9,5];
+// const nums4 = [9,4,9,8,4];
+
+// console.log(inc(nums3, nums4));
