@@ -598,11 +598,11 @@
 //     const n = A.length;
 //     let minIdx = -1;
 //     let maxIdx = -1;
-    
+
 //     // Find the indices of the minimum and maximum values
 //     let minValue = Infinity;
 //     let maxValue = -Infinity;
-    
+
 //     for (let i = 0; i < n; i++) {
 //         if (A[i] < minValue) {
 //             minValue = A[i];
@@ -613,10 +613,10 @@
 //             maxIdx = i;
 //         }
 //     }
-    
+
 //     // Calculate the smallest subarray length containing both min and max values
 //     const subarrayLength = Math.abs(maxIdx - minIdx) + 1;
-    
+
 //     return subarrayLength;
 // }
 
@@ -625,8 +625,6 @@
 // const A2 = [2, 6, 1, 6, 9];
 // console.log(smallestSubarrayWithMinMax(A1)); // Output: 2
 // console.log(smallestSubarrayWithMinMax(A2)); // Output: 3
-
-
 
 // function moveZeroes(nums) {
 //     let nonZeroIndex = 0;
@@ -653,7 +651,6 @@
 // moveZeroes(nums2);
 // console.log(nums2); // Output: [0]
 
-
 // var containsDuplicate = function(nums) {
 //     for(var i=0;i<nums.length;i++){
 //         for(var j=i+1;j<nums.length;j++){
@@ -677,21 +674,95 @@
 //     return false;
 // };
 
-// function inc(a,b){
+// function inc(nums1,nums2){
 
-//     if(a.length > b.length){
+//     let result = [];
+//   const set1 = new Set(nums1);
+//   const set2 = new Set(nums2);
 
-//     }else( a.length<b.length){
-       
-//     }
+//   // Check for common elements regardless of array lengths
+//   result = Array.from(set1).filter(item => set2.has(item));
+
+//   return result;
 // }
 
-// const nums1 = [1,2,2,1];
-// const  nums2 = [2,2];
+// const a= [1,2,2,1];
+// const  b= [2,2];
 
-// console.log(inc(nums1, nums2));
+// console.log(inc(a, b));
 
-// const nums3 = [4,9,5];
-// const nums4 = [9,4,9,8,4];
+// const c = [4,9,5];
+// const d = [9,4,9,8,4];
 
-// console.log(inc(nums3, nums4));
+// console.log(inc(c, d));
+
+// function  maxDifference(nums){
+//     if(nums.length<2) return -1;
+
+//     let result =[]
+//     for(var i=0; i<nums.length;i++){
+//         for(var j=i+1;j<nums.length;j++){
+
+//             if(nums[j]>nums[i]){
+//                 let temp =nums[j]-nums[i];
+//                 result.push(temp);
+//             }
+//         }
+//     }
+//     if(result.length>0){
+//         const maxDiff= Math.max(...result);
+//         return maxDiff;
+//     }else if (result.length===0){
+//         return -1
+//     }
+
+// }
+
+// More optimized way
+
+// function maxDifference(nums){
+//     if(nums.length<2) return -1;
+
+//     let minElement=nums[0];
+//     let maxDiff=-1;
+
+//     for(var i=0;i<nums.length;i++){
+//         if(nums[i]>minElement){
+//             const Diff = nums[i]-minElement;
+//             maxDiff = Math.max(maxDiff, Diff)
+//         }else{
+//             minElement=nums[i];
+//         }
+//     }
+//     return maxDiff;
+// }
+// const a =[9,4,3,2]
+// console.log(maxDifference(a));
+
+// const b=[1,5,2,10]
+// console.log(maxDifference(b));
+
+// const c= [7,1,5,4]
+// console.log(maxDifference(c));
+
+// function bulb(A) {
+
+//     if(A.every(element=> element==0)) return 0;
+//     let count = 0;
+//     let currentState = 0; 
+
+//     for (let i = 0; i < A.length; i++) {
+
+//         if (currentState === A[i]) {
+//             count++; 
+//             currentState = 1 - currentState; 
+//         }
+//     }
+
+//     return count;
+// }
+
+// const nums = [0, 1,0, 1];
+// console.log(bulb(nums)); // output 4
+// const nums1 = [1, 1, 1, 1];
+// console.log(bulb(nums1)); // output 0
