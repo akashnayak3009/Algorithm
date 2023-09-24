@@ -749,13 +749,13 @@
 
 //     if(A.every(element=> element==0)) return 0;
 //     let count = 0;
-//     let currentState = 0; 
+//     let currentState = 0;
 
 //     for (let i = 0; i < A.length; i++) {
 
 //         if (currentState === A[i]) {
-//             count++; 
-//             currentState = 1 - currentState; 
+//             count++;
+//             currentState = 1 - currentState;
 //         }
 //     }
 
@@ -766,3 +766,51 @@
 // console.log(bulb(nums)); // output 4
 // const nums1 = [1, 1, 1, 1];
 // console.log(bulb(nums1)); // output 0
+
+// function leader(A) {
+//     let n = A.length;
+//     if(n === 0 ) return;
+//     if(n === 1 ) return [A[0]];
+//     let result = [];
+//     let max = A[n - 1];
+//     result.unshift(max);
+//     for (var i = n - 1; i >= 0; i--) {
+//         if (A[i - 1] > max) {
+//             result.unshift(A[i - 1])
+//             max = A[i - 1];
+//         }
+//     }
+//     return result;
+// };
+
+// const num = [16, 17, 4, 3, 5, 2];
+// console.log(leader(num));
+
+// const num1 = [5, 4];
+// console.log(leader(num1))
+
+function subarray(A) {
+    let n = A.length;
+
+    if (n % 2 !== 0 || n <= 3) return "NO";
+
+    if (n % 2 === 0) {
+        if ((n / 2) % 2 === 0) {
+            for(var i =0; i<=n-1;i++){
+                if(A[i]%2===0){
+                    return 'YES'
+                }
+            }
+        } 
+    }
+    return 'NO'
+}
+
+const num = [2, 4, 8, 6];
+console.log(subarray(num));
+
+const num1 = [2, 4, 8, 7, 6];
+console.log(subarray(num1));
+
+const num2 = [1, 2, 3];
+console.log(subarray(num2));
