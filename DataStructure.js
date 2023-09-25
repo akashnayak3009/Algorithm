@@ -789,28 +789,44 @@
 // const num1 = [5, 4];
 // console.log(leader(num1))
 
-function subarray(A) {
-    let n = A.length;
+// function subarray(A) {
+//     let n = A.length;
 
-    if (n % 2 !== 0 || n <= 3) return "NO";
+//     if (n % 2 !== 0 || n <= 3) return "NO";
 
-    if (n % 2 === 0) {
-        if ((n / 2) % 2 === 0) {
-            for(var i =0; i<=n-1;i++){
-                if(A[i]%2===0){
-                    return 'YES'
-                }
-            }
-        } 
-    }
-    return 'NO'
-}
+//     if (n % 2 === 0) {
+//         if ((n / 2) % 2 === 0) {
+//             for(var i =0; i<=n-1;i++){
+//                 if(A[i]%2===0){
+//                     return 'YES'
+//                 }
+//             }
+//         } 
+//     }
+//     return 'NO'
+// }
 
-const num = [2, 4, 8, 6];
-console.log(subarray(num));
+// const num = [2, 4, 8, 6];
+// console.log(subarray(num));
 
-const num1 = [2, 4, 8, 7, 6];
-console.log(subarray(num1));
+// const num1 = [2, 4, 8, 7, 6];
+// console.log(subarray(num1));
 
-const num2 = [1, 2, 3];
-console.log(subarray(num2));
+// const num2 = [1, 2, 3];
+// console.log(subarray(num2));
+
+
+    // function vowelsCount(A){
+    //     let vowels = "aeiouAEIOU";
+    //     let count = 0;
+    //     const mod =10003
+    //     for(var i=0; i<A.length; i++){
+    //         if(vowels.includes(A[i])){
+    //             count =( count + A.length -i) % mod;
+
+    //         }
+    //     }
+    //     return count;
+    // };
+    // const str ="ABEC";
+    // console.log(vowelsCount(str));
