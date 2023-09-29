@@ -801,7 +801,7 @@
 //                     return 'YES'
 //                 }
 //             }
-//         } 
+//         }
 //     }
 //     return 'NO'
 // }
@@ -815,18 +815,153 @@
 // const num2 = [1, 2, 3];
 // console.log(subarray(num2));
 
+// function vowelsCount(A){
+//     let vowels = "aeiouAEIOU";
+//     let count = 0;
+//     const mod =10003
+//     for(var i=0; i<A.length; i++){
+//         if(vowels.includes(A[i])){
+//             count =( count + A.length -i) % mod;
 
-    // function vowelsCount(A){
-    //     let vowels = "aeiouAEIOU";
-    //     let count = 0;
-    //     const mod =10003
-    //     for(var i=0; i<A.length; i++){
-    //         if(vowels.includes(A[i])){
-    //             count =( count + A.length -i) % mod;
+//         }
+//     }
+//     return count;
+// };
+// const str ="ABEC";
+// console.log(vowelsCount(str));
 
-    //         }
-    //     }
-    //     return count;
-    // };
-    // const str ="ABEC";
-    // console.log(vowelsCount(str));
+// function largestArray(N){
+//     let currentSum =0;
+//     let maxSum =0;
+//     for(var i=0;i<N.length;i++){
+//         currentSum = Math.max(N[i],currentSum + N[i]);
+//         maxSum = Math.max(maxSum, currentSum)
+//     }
+//     return maxSum;
+
+// }
+
+// const A = [-2, 1, -3, 4, -1, 2, 1, -5, 4] ;
+// console.log(largestArray(A)); // output 6
+// const  B=  [1, 2, 3, 4, -10] ;
+// console.log(largestArray(B)); // output 10
+
+// function totalSum(A){
+//     let totalSum=0;
+//     for (let i=0;i<A.length;i++){
+//         for(let j=i+1;j<A.length+1;j++){
+//         const subarray = A.slice(i,j);
+//         const subarraySum = subarray.reduce((prev, curr)=> prev + curr);
+//         totalSum+=subarraySum;
+//         }
+//     }
+//     return totalSum;
+// }
+
+// Another approach
+
+// function totalSum(A){
+//     let totalSum=0;
+//     for(let i=0; i<A.length; i++){
+//         let subarraySum=0;
+//         for(let j=i; j<A.length; j++){
+//             subarraySum += A[j];
+//             totalSum += subarraySum;
+//         }
+//     }
+//     return totalSum;
+// }
+
+// function totalSum(A){
+//     let totalSum =0;
+//     let n=A.length;
+//     for (let i = 0; i <n; i++) {
+//         totalSum =totalSum + A[i]*(i+1)*(n-i);
+//     }
+
+//     return totalSum;
+// }
+// const N = [1, 2, 3] // output  20
+// console.log(totalSum(N));
+// const B = [2, 1, 3] // output 19
+// console.log(totalSum(B));
+
+
+//  function  average(A, B) {
+//       let n = A.length;
+  
+//       if (B > n) return -1;
+  
+//       let sum = 0; 
+//       for (var i = 0; i < B; i++) {
+//         sum += A[i];
+//       }
+//       let minSum = sum;
+//       let minIndex = 0;
+  
+//       for (var i = B; i < n; i++) {
+//         sum += A[i] - A[i - B];
+  
+//         if (sum < minSum) {
+//           minSum = sum;
+//           minIndex = i - B + 1; }
+
+//       }
+  
+//       return minIndex;
+//     }
+  
+// const x = [3, 7, 90, 20, 10, 50, 40];
+// const y = 3;
+// console.log(average(x, y)); // output 3
+
+// const m = [3, 7, 5, 20, -10, 0, 12];
+// const n = 2;
+// console.log(average(m, n)); //output 4
+
+
+// function maxNum(A,B,C){
+// if(A>C.length) return -1;
+// let maxSum=0;
+
+// for(var i=0;i<A;i++){
+//     let sum=0;
+//     for(var j=i;j<A;j++){
+//         sum +=C[j];
+//         if(sum<=B){
+//             maxSum = Math.max(maxSum, sum);
+//         }
+//     }
+// }
+// return maxSum;
+
+// }
+
+// function maxNum(A,B,C){
+//     if(A>C.length) return -1;
+//     let maxSum=0;
+//     let sum=0;
+//     let start=0;
+//     for(end=0;end<A;end++){
+//         sum +=C[end];
+//         while(sum>B){
+//             sum -=C[start]
+//             start++;
+//         }
+//       maxSum = Math.max(maxSum, sum);
+//     }
+//     return maxSum;
+// }
+
+
+// const x = 5
+// const y = 12
+// const z = [2, 1, 3, 4, 5];
+
+// console.log(maxNum(x,y,z));
+
+// const a = 3
+// const b = 1
+// const c = [2, 2, 2];
+
+// console.log(maxNum(a,b,c));
