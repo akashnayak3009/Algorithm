@@ -886,31 +886,30 @@
 // const B = [2, 1, 3] // output 19
 // console.log(totalSum(B));
 
-
 //  function  average(A, B) {
 //       let n = A.length;
-  
+
 //       if (B > n) return -1;
-  
-//       let sum = 0; 
+
+//       let sum = 0;
 //       for (var i = 0; i < B; i++) {
 //         sum += A[i];
 //       }
 //       let minSum = sum;
 //       let minIndex = 0;
-  
+
 //       for (var i = B; i < n; i++) {
 //         sum += A[i] - A[i - B];
-  
+
 //         if (sum < minSum) {
 //           minSum = sum;
 //           minIndex = i - B + 1; }
 
 //       }
-  
+
 //       return minIndex;
 //     }
-  
+
 // const x = [3, 7, 90, 20, 10, 50, 40];
 // const y = 3;
 // console.log(average(x, y)); // output 3
@@ -918,7 +917,6 @@
 // const m = [3, 7, 5, 20, -10, 0, 12];
 // const n = 2;
 // console.log(average(m, n)); //output 4
-
 
 // function maxNum(A,B,C){
 // if(A>C.length) return -1;
@@ -953,7 +951,6 @@
 //     return maxSum;
 // }
 
-
 // const x = 5
 // const y = 12
 // const z = [2, 1, 3, 4, 5];
@@ -965,3 +962,119 @@
 // const c = [2, 2, 2];
 
 // console.log(maxNum(a,b,c));
+
+// function countSub(A,B){
+//     if( !A.every((element)=>element>=0)) return false ;
+
+//     let count=0;
+//     let sum=0;
+//         for(var i=0;i<A.length; i++){
+//         if(A[i]<B){
+//             count++;
+//         }
+//         if(A[i]+A[i+1]<B){
+//             sum++;
+//         }
+//     }
+//     return sum+count;
+// }
+
+// function countSub(A,B){
+//     if(!A.every((element)=>element>=0)) return false;
+
+//     let count=0;
+
+//     for(var i=0; i<A.length;i++){
+//         let sum=0;
+//         for(var j=i;j<A.length;j++){
+//             sum +=A[j];
+//             if(sum<B){
+//              count++
+//             }else{
+//                 break ;
+//             }
+//         }
+//     }
+//     return count;
+// }
+
+// const x = [2, 5, 6];
+// const y = 10;
+// console.log(countSub(x,y));
+
+// const X = [1, 11, 2, 3, 15]
+// const Y= 10
+// console.log(countSub(X,Y));
+
+// function goodSubArray(A, B) {
+//     let n = A.length;
+//     let ans = 0;
+//     for (var i = 0; i < n; i++) {
+//         let sum = 0;
+//         for (var j = i; j < n; j++) {
+//             sum += A[j];
+//             if (sum < B && (j - i + 1) % 2 === 0) {
+//                 ans++;
+//             } else if (sum > B && (j - i + 1) % 2 === 1) {
+//                 ans++;
+//             }
+//         }
+//     }
+//     return ans;
+// }
+
+// const x = [1, 2, 3, 4, 5];
+// const y = 4;
+// console.log(goodSubArray(x, y));
+
+// const X = [13, 16, 16, 15, 9, 16, 2, 7, 6, 17, 3, 9];
+// const Y = 65;
+// console.log(goodSubArray(X, Y));
+
+// function sortedArr(A, B) { 
+//     const N = A.length;
+//     const result = [];
+  
+//     function isAlternating(subarray) {
+//       for (let i = 1; i < subarray.length; i++) {
+//         if (subarray[i] === subarray[i - 1]) {
+//           return false;
+//         }
+//       }
+//       return true;
+//     }
+  
+//     for (let i = 0; i < N; i++) {
+//       let left = i;
+//       let right = i;
+//       let zeros = 0;
+//       let ones = 0;
+  
+//       while (right < N && zeros + ones < 2 * B + 1) {
+//         if (A[right] === 0) {
+//           zeros++;
+//         } else {
+//           ones++;
+//         }
+  
+//         if (isAlternating(A.slice(left, right + 1))) {
+//           result.push(i);
+//           break;
+//         }
+  
+//         right++;
+//       }
+//     }
+  
+//     return result;
+
+// }
+
+// const x = [1, 0, 1, 0, 1];
+// const y = 1;
+
+// console.log(sortedArr(x, y));
+
+// const X = [0, 0, 0, 1, 1, 0, 1];
+// const Y = 0;
+// console.log(sortedArr(X, Y));
