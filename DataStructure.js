@@ -1078,3 +1078,56 @@
 // const X = [0, 0, 0, 1, 1, 0, 1];
 // const Y = 0;
 // console.log(sortedArr(X, Y));
+
+// function twoMatrice(A,B){
+
+//     if(A.length !== B.length || A[0].length !== B[0].length) return false;
+ 
+//     let resultMatrix=[];
+//     for(var i=0;i<A.length;i++){
+//         resultMatrix.push([])
+//     }
+//     for(var i=0;i<A.length;i++){
+//         for(var j=0;j<A[i].length;j++){
+//             resultMatrix[i][j]= A[i][j] + B[i][j];
+//         }
+//     }
+//     return resultMatrix
+// };
+
+// const x = [[1, 2, 3],   
+//      [4, 5, 6],   
+//      [7, 8, 9]]  
+
+// const y = [[9, 8, 7],   
+//      [6, 5, 4],   
+//      [3, 2, 1]]
+ 
+// console.log(twoMatrice(x,y))
+
+// const X = [[1, 2, 3],   
+//      [4, 1, 2],   
+//      [7, 8, 9]]  
+
+// const Y = [[9, 9, 7],   
+//      [1, 2, 4],   
+//      [4, 6, 3]]
+
+// console.log(twoMatrice(X,Y))
+
+// function columnSum(A){
+//     let columnSu=[]
+//     for(var i=0;i<A[0].length; i++){
+//         let sum=0;
+//         for(var j=0;j<A.length;j++){
+//             sum +=A[j][i];
+//         }
+//         columnSu.push(sum);
+//     }
+//   return columnSu 
+// };
+// const x =
+// [[1,2,3,4],
+// [5,6,7,8],
+// [9,2,3,4]]
+// console.log(columnSum(x))
