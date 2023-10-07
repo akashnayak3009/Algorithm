@@ -1131,3 +1131,18 @@
 // [5,6,7,8],
 // [9,2,3,4]]
 // console.log(columnSum(x))
+
+function longestConsecutive(A){
+    if(!/^[01]+$/.test(A)) return false;
+    let count =0;
+    for(var i=0; i<A.length; i++){
+        if(A[i]=="1"){
+            count ++
+        }
+    }
+    return count;
+};
+const x="111000"        //output 3
+console.log(longestConsecutive(x));
+const X="111011101" //output 7
+console.log(longestConsecutive(X));
