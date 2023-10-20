@@ -1132,17 +1132,45 @@
 // [9,2,3,4]]
 // console.log(columnSum(x))
 
-function longestConsecutive(A){
-    if(!/^[01]+$/.test(A)) return false;
-    let count =0;
-    for(var i=0; i<A.length; i++){
-        if(A[i]=="1"){
-            count ++
-        }
-    }
-    return count;
-};
-const x="111000"        //output 3
-console.log(longestConsecutive(x));
-const X="111011101" //output 7
-console.log(longestConsecutive(X));
+// function longestConsecutive(A){
+//     if(!/^[01]+$/.test(A)) return false;
+//     let count =0;
+//     for(var i=0; i<A.length; i++){
+//         if(A[i]=="1"){
+//             count ++
+//         }
+//     }
+//     return count;
+// };
+// const x="111000"        //output 3
+// console.log(longestConsecutive(x));
+// const X="111011101" //output 7
+// console.log(longestConsecutive(X));
+
+// function reverse(s){
+//     return s.split('').reverse().join('');
+// }
+
+// const A="Hello"
+// console.log(reverse(A));
+
+// function longestWord(s) {
+//     const words = s.split(' '); // Split the string into an array of words
+//     let longCont = '';
+
+//     for (let i = 0; i < words.length; i++) {
+//         if (words[i].length > longCont.length) {
+//             longCont = words[i];
+//         }
+//     }
+//     return longCont;
+// }
+
+// const A = "Longest string is which one";
+// console.log(longestWord(A)); // Output: "Longest"
+
+// function palindrome(s){
+//     return s === s.split('').reverse().join('');
+// }
+
+// console.log(palindrome("ollo"))
