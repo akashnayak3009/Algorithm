@@ -1031,10 +1031,10 @@
 // const Y = 65;
 // console.log(goodSubArray(X, Y));
 
-// function sortedArr(A, B) { 
+// function sortedArr(A, B) {
 //     const N = A.length;
 //     const result = [];
-  
+
 //     function isAlternating(subarray) {
 //       for (let i = 1; i < subarray.length; i++) {
 //         if (subarray[i] === subarray[i - 1]) {
@@ -1043,29 +1043,29 @@
 //       }
 //       return true;
 //     }
-  
+
 //     for (let i = 0; i < N; i++) {
 //       let left = i;
 //       let right = i;
 //       let zeros = 0;
 //       let ones = 0;
-  
+
 //       while (right < N && zeros + ones < 2 * B + 1) {
 //         if (A[right] === 0) {
 //           zeros++;
 //         } else {
 //           ones++;
 //         }
-  
+
 //         if (isAlternating(A.slice(left, right + 1))) {
 //           result.push(i);
 //           break;
 //         }
-  
+
 //         right++;
 //       }
 //     }
-  
+
 //     return result;
 
 // }
@@ -1082,7 +1082,7 @@
 // function twoMatrice(A,B){
 
 //     if(A.length !== B.length || A[0].length !== B[0].length) return false;
- 
+
 //     let resultMatrix=[];
 //     for(var i=0;i<A.length;i++){
 //         resultMatrix.push([])
@@ -1095,22 +1095,22 @@
 //     return resultMatrix
 // };
 
-// const x = [[1, 2, 3],   
-//      [4, 5, 6],   
-//      [7, 8, 9]]  
+// const x = [[1, 2, 3],
+//      [4, 5, 6],
+//      [7, 8, 9]]
 
-// const y = [[9, 8, 7],   
-//      [6, 5, 4],   
+// const y = [[9, 8, 7],
+//      [6, 5, 4],
 //      [3, 2, 1]]
- 
+
 // console.log(twoMatrice(x,y))
 
-// const X = [[1, 2, 3],   
-//      [4, 1, 2],   
-//      [7, 8, 9]]  
+// const X = [[1, 2, 3],
+//      [4, 1, 2],
+//      [7, 8, 9]]
 
-// const Y = [[9, 9, 7],   
-//      [1, 2, 4],   
+// const Y = [[9, 9, 7],
+//      [1, 2, 4],
 //      [4, 6, 3]]
 
 // console.log(twoMatrice(X,Y))
@@ -1124,7 +1124,7 @@
 //         }
 //         columnSu.push(sum);
 //     }
-//   return columnSu 
+//   return columnSu
 // };
 // const x =
 // [[1,2,3,4],
@@ -1174,3 +1174,36 @@
 // }
 
 // console.log(palindrome("ollo"))
+
+// function singleNumber(A) {
+//     const sortedNums = A.slice().sort((a, b) => a - b);
+  
+//     for (var i = 0; i < sortedNums.length; i++) {
+//       if (sortedNums[i] !== sortedNums[i + 1]) {
+//         return sortedNums[i];
+//       }
+//     }
+//   }
+// function singleNumber(A) {
+//     let ans = 0n;
+//     A.forEach((ele) => (ans ^= BigInt(ele))); 
+//     return Number(ans); 
+//   }
+  
+//   const a = [1, 2, 2, 3, 1];
+//   console.log(singleNumber(a)); // Output: 3
+  
+//   const b = [1, 2, 2];
+//   console.log(singleNumber(b)); // Output: 1
+  
+  
+function addBinary(A,B){
+
+}
+const a = "100"
+const b = "11"
+console.log(addBinary(a,b));
+
+const x = "110"
+const y = "10"
+console.log(addBinary(x,y));
