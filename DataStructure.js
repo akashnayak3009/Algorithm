@@ -511,7 +511,6 @@
 
 // const B = [1,2,3,4,5];
 // console.log(productArray(B));
-
 // function twoPair(str){
 //     let count =0;
 //     for(var i=0;i<str.length;i++){
@@ -1177,7 +1176,7 @@
 
 // function singleNumber(A) {
 //     const sortedNums = A.slice().sort((a, b) => a - b);
-  
+
 //     for (var i = 0; i < sortedNums.length; i++) {
 //       if (sortedNums[i] !== sortedNums[i + 1]) {
 //         return sortedNums[i];
@@ -1186,24 +1185,55 @@
 //   }
 // function singleNumber(A) {
 //     let ans = 0n;
-//     A.forEach((ele) => (ans ^= BigInt(ele))); 
-//     return Number(ans); 
+//     A.forEach((ele) => (ans ^= BigInt(ele)));
+//     return Number(ans);
 //   }
-  
+
 //   const a = [1, 2, 2, 3, 1];
 //   console.log(singleNumber(a)); // Output: 3
-  
+
 //   const b = [1, 2, 2];
 //   console.log(singleNumber(b)); // Output: 1
-  
-  
-function addBinary(A,B){
 
+// function removeDuplicate(nums) {
+//   if (nums.length === 0) {
+//     return 0;
+//   }
+
+//   let k = 1; // Initialize the unique element count
+//   for (let i = 1; i < nums.length; i++) {
+//     if (nums[i] !== nums[i - 1]) {
+//       nums[k] = nums[i];
+//       k++;
+//     }
+//   }
+
+//   return k;
+// }
+
+// const A = [1, 1, 2];
+// console.log(removeDuplicate(A));
+
+// const B = [0, 1, 1, 1, 2, 2, 3, 3, 4];
+// console.log(removeDuplicate(B));
+
+
+function removeElement(nums, val){
+
+    let k =0;
+    for(let i=0; i<nums.length; i++){
+        if(nums[i] !== val){
+            nums[k] = nums[i];
+            k++;
+        }
+    }
+    return k;
 }
-const a = "100"
-const b = "11"
-console.log(addBinary(a,b));
 
-const x = "110"
-const y = "10"
-console.log(addBinary(x,y));
+const  num = [3,2,2,3];
+const  value = 3;
+console.log(removeElement(num,value))
+
+const  num1 = [0,1,2,2,3,0,4,2];
+const  value1 = 2;
+console.log(removeElement(num1,value1))
