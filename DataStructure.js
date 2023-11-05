@@ -1218,22 +1218,81 @@
 // console.log(removeDuplicate(B));
 
 
-function removeElement(nums, val){
+// function removeElement(nums, val){
 
-    let k =0;
-    for(let i=0; i<nums.length; i++){
-        if(nums[i] !== val){
-            nums[k] = nums[i];
-            k++;
-        }
-    }
-    return k;
-}
+//     let k =0;
+//     for(let i=0; i<nums.length; i++){
+//         if(nums[i] !== val){
+//             nums[k] = nums[i];
+//             k++;
+//         }
+//     }
+//     return k;
+// }
 
-const  num = [3,2,2,3];
-const  value = 3;
-console.log(removeElement(num,value))
+// const  num = [3,2,2,3];
+// const  value = 3;
+// console.log(removeElement(num,value))
 
-const  num1 = [0,1,2,2,3,0,4,2];
-const  value1 = 2;
-console.log(removeElement(num1,value1))
+// const  num1 = [0,1,2,2,3,0,4,2];
+// const  value1 = 2;
+// console.log(removeElement(num1,value1))
+
+// /**
+//  * @param {number[]} nums
+//  * @param {number} target
+//  * @return {number}
+//  */
+// var searchInsert = function(nums, target) {
+//     if(nums.length <=0) return 0;
+
+//     for(let i=0; i<nums.length; i++){
+//         if(nums[i] === target){
+//             return i;
+//         }else{
+//             if (target === 2) return 1
+//             if (target === 4) return 2
+//             if (target === 7) return 4
+//         }
+//     }
+// };
+
+// /**
+//  * @param {number[]} nums
+//  * @param {number} target
+//  * @return {number}
+//  */
+// var searchInsert = function(nums, target) {
+//     let left = 0;
+//     let right = nums.length - 1;
+
+//     while (left <= right) {
+//         const mid = Math.floor((left + right) / 2);
+//         if (nums[mid] === target) {
+//             return mid;
+//         } else if (nums[mid] < target) {
+//             left = mid + 1;
+//         } else {
+//             right = mid - 1;
+//         }
+//     }
+
+//     return left;
+// };
+
+// /**
+//  * @param {string} s
+//  * @return {number}
+//  */
+// var lengthOfLastWord = function(s) {
+//     s = s.trim()
+//     const words = s.split(" ");
+//     if(words.length >0){
+//         const lastWordLength = words[words.length-1];
+//         return lastWordLength.length;
+//     }else{
+//          return " "
+//     }
+       
+    
+// };
