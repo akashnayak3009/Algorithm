@@ -1217,7 +1217,6 @@
 // const B = [0, 1, 1, 1, 2, 2, 3, 3, 4];
 // console.log(removeDuplicate(B));
 
-
 // function removeElement(nums, val){
 
 //     let k =0;
@@ -1293,6 +1292,71 @@
 //     }else{
 //          return " "
 //     }
-       
-    
+
 // };
+
+// /**
+//  * @param {string[]} strs
+//  * @return {string}
+//  */
+// var longestCommonPrefix = function(strs) {
+//     if(strs.length === 0){
+//         return ""
+//     };
+//     let minLength = Math.min(...strs.map(str=>str.length));
+//     let result=""
+
+//     for(let i =0; i<minLength; i++){
+//         let char = strs[0][i];
+//         for (let j=1;j<strs.length;j++){
+//             if(strs[j][i] !== char){
+//                 return result;
+//             }
+//         }
+//         result += char;
+//     }
+//     return result;
+// };
+
+// function primme(num) {
+//   if (num <= 1) return false;
+
+//   for(let i=2; i<Math.sqrt(num); i++){
+//     if(num%i===0) return false
+//   }
+//   return true;
+// }
+
+// console.log(primme(17))
+
+// function reverseString(str){
+//     if(str.length === 0) return false;
+//     let reversed=""
+//     for(let i=str.length-1; i>=0; i--){
+//         reversed = reversed+ str[i];
+//     }
+//     return reversed;
+// }
+
+// console.log(reverseString("abcdefghijklmnopqrstuv"))
+
+// function missingValues(nums) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] + 1 !== nums[i + 1]) {
+//       return nums[i] + 1;
+//     }
+//   }
+// }
+// let arr = [1, 2, 3, 4, 5, 6, 7, 9, 10];
+// console.log(missingValues(arr));
+
+// function cummulativeSum(arr){
+//     let result =[arr[0]];
+//     for(let i = 1; i<arr.length;i++){
+//         result.push(arr[i] + result[i-1])
+//     }
+//     return result;
+// }
+// let arr = [1, 2, 3, 4, 5, 6, 7, 9, 10];
+// console.log(cummulativeSum(arr))
+
