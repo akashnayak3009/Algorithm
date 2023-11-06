@@ -1360,3 +1360,62 @@
 // let arr = [1, 2, 3, 4, 5, 6, 7, 9, 10];
 // console.log(cummulativeSum(arr))
 
+
+// function reverseNumber(num){
+//     let reversed =0;
+// while(num>0){
+//     reversed = reversed * 10 + (num % 10);
+//     num= Math.floor(num/10);
+// }
+// return reversed;
+// }
+
+// console.log(reverseNumber(123456789))
+// console.log(reverseNumber(123456))
+
+// [3:04 PM] Nilabh Chutia
+// Write a program to find the first repeating character in a string.
+// Ex:  
+// input: abcab
+// Output: a
+ 
+// Input: decbed
+// Output: e
+
+
+
+// function repeatingChar(str){
+//     const charSet = new Set();
+//     for(let i=0; i<str.length; i++){
+//         const char =str[i];
+//         if(charSet.has(char)){
+//             return char;
+//         }
+//         charSet.add(char);
+//     }
+//     return null;
+// }
+
+// console.log(repeatingChar("afgeh"))
+
+
+
+// function primeNumber(n){
+// if(n <= 1) return false;
+// const primes =[];
+
+// for (let num =2; num <=n; num++){
+//     let isPrime = true;
+//     for (let i=2; i<= Math.sqrt(num); i++){
+//         if(num % i ===0){
+//             isPrime =false;
+//             break;
+//         }
+//     }
+//     if(isPrime){
+//         primes.push(num);
+//     }
+// }
+// return primes;
+// }
+// console.log(primeNumber(20))
