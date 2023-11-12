@@ -1419,3 +1419,31 @@
 // return primes;
 // }
 // console.log(primeNumber(20))
+
+
+// function longestPalindrome(s){
+
+//     if(s.length <=1) return s;
+//     let longest =''
+//     for(let i=0;i<s.length;i++){
+//         let odd =expandAroundCenter(s,i,i);
+//         if(odd.length > longest.length){
+//             longest = odd;
+//         }
+//         let even =expandAroundCenter(s,i,i+1);
+//         if(even.length> longest.length){
+
+//             longest=even;
+//         }
+//     }
+//     return longest;
+// }
+
+// function expandAroundCenter(s,left,right){
+//     while(left >=0  && right<s.length && s[left]===s[right]){
+//         left--;
+//         right++;
+//     }
+//     return s.slice(left+1, right);
+// }
+
