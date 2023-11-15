@@ -1447,3 +1447,21 @@
 //     return s.slice(left+1, right);
 // }
 
+// For dividing in bit 
+// a>>1
+// For Multiplying in bit 
+// a<<1
+
+//Find the number of bits from a to b
+function bitChanged(a,b){
+    let count =0;
+    let c = a ^ b;
+    while(c!==0){
+        count += c &1;
+        c = c>>1;
+    }
+    return count;
+}
+console.log(bitChanged(5,9))
+console.log(bitChanged(10,13))
+console.log(bitChanged(7,8))
