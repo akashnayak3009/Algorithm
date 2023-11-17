@@ -1453,15 +1453,35 @@
 // a<<1
 
 //Find the number of bits from a to b
-function bitChanged(a,b){
-    let count =0;
-    let c = a ^ b;
-    while(c!==0){
-        count += c &1;
-        c = c>>1;
-    }
-    return count;
-}
-console.log(bitChanged(5,9))
-console.log(bitChanged(10,13))
-console.log(bitChanged(7,8))
+
+// function bitChanged(a,b){
+//     let count =0;
+//     let c = a ^ b;
+//     while(c!==0){
+//         count += c &1;
+//         c = c>>1;
+//     }
+//     return count;
+// }
+// console.log(bitChanged(5,9))
+// console.log(bitChanged(10,13))
+// console.log(bitChanged(7,8))
+
+
+//find single repeating integer in the array by bit manipulation
+
+// function singleRepeating(a){
+//     let result =0;
+//     for(let i=0;i<a.length;i++){
+//         result ^=a[i];
+//     }
+//     if(result === 0) {
+//         return "NO repeating number"
+//     }else{
+//         return result;
+//     }
+
+// }
+
+// const A = [4,1,8,5,1,4,8];
+// console.log(singleRepeating(A))
