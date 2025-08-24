@@ -1375,7 +1375,7 @@
 
 // [3:04 PM] Nilabh Chutia
 // Write a program to find the first repeating character in a string.
-// Ex:  
+// Ex:
 // input: abcab
 // Output: a
  
@@ -1447,9 +1447,9 @@
 //     return s.slice(left+1, right);
 // }
 
-// For dividing in bit 
+// For dividing in bit
 // a>>1
-// For Multiplying in bit 
+// For Multiplying in bit
 // a<<1
 
 //Find the number of bits from a to b
@@ -1485,3 +1485,556 @@
 
 // const A = [4,1,8,5,1,4,8];
 // console.log(singleRepeating(A))
+
+
+// Addition of two matrix
+
+
+// function addMatrix(matrix1, matrix2) {
+//     let rows = matrix1.length;
+//     let cols = matrix1[0].length;
+
+//     let result =[]
+//     for (let i = 0; i < rows; i++){
+//         let rows =[]
+//         for (let j = 0; j < cols; j++){
+//           rows.push(matrix1[i][j] + matrix2[i][j])
+//         }
+//         result.push(rows);
+//     }
+    
+//     return result;
+// }
+// let matrix1 = [
+//   [1, 2, 3],
+//   [4, 5, 6]
+// ];
+
+// let matrix2 = [
+//   [7, 8, 9],
+//   [10, 11, 12]
+// ];
+
+// console.log("addition matrix", addMatrix(matrix1, matrix2));
+
+// Row wise addition of matrix
+
+// function rowsAddtionMatrix(matrix) {
+//     let rows = matrix.length;
+//     let col = matrix[0].length;
+
+//     let result = [];
+
+//     for (let i = 0; i < rows; i++){
+//         let sum = 0;
+//         for (let j = 0; j < col; j++){
+//          sum = sum + matrix[i][j]
+//         }
+//         result.push(sum)
+//     }
+//     return result;
+// }
+
+// let matrix1 = [
+//     [1, 2, 3, 4 ],
+//     [4, 5, 6, 3],
+//     [4, 5, 6, 3],
+// ];
+
+// console.log("addition matrix", rowsAddtionMatrix(matrix1));
+
+// Column wise addition of matrix
+
+// function colsAdditionMatrix(matrix) {
+
+//     let rows = matrix.length;
+//     let cols = matrix[0].length;
+
+//     let result = [];
+
+//     for (let i = 0; i < cols; i++){
+//         let sum = 0;
+//         for (let j = 0; j < rows; j++){
+//             sum = sum + matrix[j][i];
+//         }
+//         result.push(sum);
+//     }
+//     return result;
+    
+// }
+
+// let matrix1 = [
+//     [1, 2, 3, 4 ],
+//     [4, 5, 6, 3],
+//     [4, 5, 6, 3],
+// ];
+
+// console.log("addition matrix", colsAdditionMatrix(matrix1));
+
+
+// Print triangle
+
+// function triStar() {
+//     const rows = 5;
+//     const cols = 9;
+//     const totalRowStar = [];
+
+//     for (let i = 0; i < rows; i++) {
+//         const stars = 2 * i + 1; // Number of stars in current row
+//         const leftSpaces = Math.floor((cols - stars) / 2);
+//         const rightSpaces = cols - stars - leftSpaces; // Ensure total length equals `cols`
+        
+//         const row = ' '.repeat(leftSpaces) + '*'.repeat(stars) + ' '.repeat(rightSpaces);
+//         totalRowStar.push(row);
+//     }
+
+//     return totalRowStar;
+// }
+
+
+// triStar().forEach(row => console.log(row));
+
+// Hollow rectangle
+
+// function hollowRectangle() {
+//     let rows = 4;
+//     let cols = 5;
+//     let result = [];
+//     for (let i = 0; i < rows; i++){
+//         let rowsStar = []
+//         for (let j = 0; j < cols; j++ ){
+//      if (i === 0 || i === rows - 1 || j === 0 || j === cols - 1) {
+//                rowsStar.push('*')
+//             } else {
+//                  rowsStar.push(' ')
+//             }
+//         }
+//         result.push(rowsStar.join(' '));
+//     }
+//     return result;
+// }
+// hollowRectangle().forEach(row => console.log(row));
+
+// function diamondPatternPrint() {
+//     let rows = 4;
+//     let result = [];
+
+//     for (let i = 1; i <= rows; i++){
+//         line = ''
+//         for (let k = 1; k <= rows - i; k++){
+//             line += " ";
+//         }
+
+//         for (let j = i; j >= 1; j--){
+//             line += j;
+//         }
+
+//         for (let j = 2; j <= i; j++){
+//             line += j;
+//         }
+
+//      result.push(line);
+//     }
+
+//     for (let f = rows - 1; f >= 1; f--){
+//                 line = ''
+//         for (let k = 1; k <= rows - f; k++){
+//             line += " ";
+//         }
+
+//         for (let j = f; j >= 1; j--){
+//             line += j;
+//         }
+
+//         for (let j = 2; j <= f; j++){
+//             line += j;
+//         }
+
+//      result.push(line);
+//     }
+    
+//     return result;
+// }
+
+// diamondPatternPrint().forEach(row => console.log(row));
+
+
+// Column wise sum
+// 1 2 6
+// 4 5 8
+// 7 8 9
+//--------
+// 12 15 23
+
+// function columnWiseSum(matrix1) {
+
+//     let result = []
+
+//     let colLength = matrix1[0].length;
+//     let rowsLength = matrix1.length;
+
+//     for (let i = 0; i <= colLength - 1; i++){
+//         let sum = 0;
+//         for (let j = 0; j <= rowsLength - 1; j++){
+//             sum += matrix1[j][i];
+//         }
+//         result.push(sum)
+//     }
+//     return result
+// }
+
+// let matrix1 = [
+//     [1, 2, 3, 4 ],
+//     [4, 5, 6, 3],
+//     [4, 5, 6, 3],
+// ];
+
+
+// console.log("column wise sum ", columnWiseSum(matrix1))
+
+// Print sparse matrix if the half of the number of matrix is zero than it is soarse
+
+// function sparseMatrix(matrix) {
+    
+//     totalNum = 0;
+//     zeroes = 0;
+
+//     rowsLength = matrix.length;
+
+//     for(let i = 0; i <= rowsLength - 1; i++) {
+        
+//         for (let j = 0; j <= matrix[i].length-1; j++){
+//             if (matrix[i][j] <= 0) {
+//                 zeroes += 1;
+//             }
+//             totalNum +=1
+//         }
+//     }
+//     return {totalNum, zeroes}
+// }
+
+
+// clockwise 90 degree rotation of matrix
+
+// function rotateClockMatrix(matrix) {
+    
+//     let rowsLength = matrix.length;
+//     let result = [];
+
+//     for (let i = 0; i < rowsLength; i++){
+//         let rotate = [];
+
+//         for (let j = 0; j < rowsLength; j++){
+//             let n = rowsLength;
+//             rotate.push(matrix[n-j-1][i])
+//         }
+//         result.push(rotate);
+//     }
+//     return result;
+// }
+
+// let matrix1 = [
+//     [1, 0, 0, 0],
+//     [4, 0, 0, 3],
+//     [4, 0, 0, 0],
+//     [3, 3, 4, 5]
+// ];
+
+// console.log(rotateClockMatrix(matrix1))
+
+
+// transpose of matrix
+
+// function transposeMatrix(matrix) {
+
+//     let rowsLength = matrix.length;
+//     let result = [];
+
+//     for (let i = 0; i < rowsLength; i++) {
+
+//         let rowsCol = [];
+
+//         for (let j = 0; j < rowsLength; j++){
+//            rowsCol.push(matrix[j][i])
+//         }
+//         result.push(rowsCol)
+//     }
+
+//     return result
+    
+// }
+
+// let matrix1 = [
+//     [1, 0, 0, 0],
+//     [4, 0, 0, 3],
+//     [4, 0, 0, 0],
+//     [3, 3, 4, 5]
+// ];
+
+
+// console.log(transposeMatrix(matrix1))
+
+
+// sum of digits
+
+// function sumDigit(num) {
+//     console.log(num)
+
+//     let sum = 0;
+
+//     while (num > 0) {
+//         let digit = num % 10;
+//         sum += digit;
+//         num = (num - digit) / 10;
+
+//     }
+
+//     return sum;
+
+// }
+
+// const num1 = 777777532;
+// console.log(sumDigit(num1))
+
+// Valid triangles a+b >c , b+c > a, c+a > b
+
+// function validTriangles(a, b, c) {
+//     return (a + b > c && b + c > a && c + a > b) ? "TRIANGLE" : "NOT TRIANGLE";
+// }
+
+
+// console.log(validTriangles(5,7,9))
+
+// find the root of a number
+
+// function rootNum(a, n) {
+//     let result = 1;
+//     for (i = 1; i <= n; i++){
+//         result = result * a;
+//     }
+//     return result;
+// }
+
+// console.log(rootNum(5,3))
+
+// Factorial of number
+
+// function factorialNumber(num) {
+//     if (num < 0) {
+//         return "No valid number"
+//     }
+
+//     let result = 1;
+
+//     for (let i = 1; i <= num; i++){
+//         result = result * i;
+//     }
+
+//     return result;
+// }
+
+// console.log(factorialNumber(5))
+
+// FIbonacci number
+
+// function fiboNum(num) {
+
+//     let a = 0;
+//     let b = 1;
+
+//     for (let i = 1; i <= num; i++){
+//         console.log(a)
+//         let next = a + b;
+//         a = b;
+//         b =next
+//     }
+// }
+
+// console.log(fiboNum(7))
+
+// power module with bitwise shift manipulation
+
+// shifting bit of a number by n;
+// a >> n;
+// a is actually a number;
+// n is number of bit to move left
+
+// function powerMod(a, n) {
+//     return a << n;
+// }
+
+// console.log("power mod" , powerMod(5, 3))
+
+
+// Set the x and yth bit in the number.
+// x =5, y =3 than result will be 00101000
+
+// function setBit(x, y) {
+//     let result = 0;
+
+//     result |= (1 << x);
+//     result |= (1 << y);
+//     return result;
+// }
+
+// console.log(setBit(5,3).toString(2).padStart(8, '0'))
+
+// function uniqueArrayInteger(arr) {
+
+//     if (arr.length === 0) return;
+
+//     let count = {};
+
+//     for (let num of arr){
+//         count[num] = (count[num] || 0) + 1;
+//     }
+
+//     let uniqueNumber = [];
+
+//     for (let num of arr) {
+//         if (count[num] === 1) {
+//             uniqueNumber.push(num);
+//         }
+//     }
+//     return uniqueNumber;
+// }
+
+// Using the bitwise operator
+
+// function uniqueArrayInteger(arr) {
+//     let x = 0;
+//     for (let i = 0; i < arr.length; i++)
+//     {
+//         x = x ^ arr[i];
+//     }
+//     return x;
+// }
+
+// const arrayA = [3, 3, 5, 5, 6, 7, 6]
+
+// console.log("unique number is:", uniqueArrayInteger(arrayA))
+
+// Here to find the a^n operation
+
+// function rootNum(a, n) {
+//     let result = 1;
+
+//     while (n > 0) {
+//         if (n & 1) {
+//             result *= a;
+//         }
+//         a *= a;
+//         n >>= 1;
+//     }
+//     return result;
+    
+// }
+// let num = 5;
+// let rootNumber = 7;
+
+// console.log(`${num} power to ${rootNumber} is`, rootNum(num,rootNumber))
+
+// Find sum subset of the array which is equal to a given number.
+
+// function sumArr(arr, k) {
+    
+// }
+
+// const n = 12;
+// const arrary = [5,3, -8, 10,18, -3]
+
+// console.log("sumArr", sumArr(arrary, n))
+
+
+// Binary representation of a given number
+
+// function binNum(n) {
+//     let ans = "";
+//     for (let i = 31; i >= 0; i--){
+//         if ((n & (1 << i)) !== 0) {
+//             ans += "1"
+//         } else {
+//              ans += "0"
+//         }
+//     }
+//     return ans;
+// };
+
+// let num = 582;
+// console.log("binNUm", binNum(num))
+
+// Set of 0 rightmost of the number
+// function binNum(n) {
+//  return n & (n-1)
+// }
+
+// let num = 6;
+// console.log("binNUm", binNum(num))
+
+// Check the kth position of number is set or unset
+// function binNum(n, k) {
+//     if (n & (1 << k) !== 0) {
+//       return "YES"
+//     }else{
+//     return "NO"
+//   }
+// }
+
+// let num = 5;
+// let kum = 1;
+// console.log("binNUm", binNum(num, kum))
+
+// Set the kth bit of the number
+
+// function binNum(n, k) {
+//         return n | (1<<k);
+// }
+
+// let num = 10;
+// let kum = 2;
+// console.log("binNUm", binNum(num, kum))
+
+// Odd occurring number in the array
+
+// function binNum(n) {
+//     let count = 0;
+//     for (let i = 0; i < n.length; i++) {
+//         if ((n[i] & 1) !== 0) {
+//             count += 1;
+//         }
+//     }
+//     return count;
+// }
+
+//  let num = [ 2, 3, 5, 4, 5, 2, 4,
+//                 3, 5, 2, 4, 4, 2 ];
+// console.log("binNUm", binNum(num))
+
+// Check the number is power of the 2
+
+// function binNum(n) {
+//     if (n < 0) return false;
+//     let count =0
+//     while (n > 0) {
+//         if (n & 1) {
+//             count +=1
+//         }
+//         n = n>>1
+//     }
+
+//     return count ===1 ? "power of 2": "No";
+// }
+
+// let num = 647;
+// console.log("binNUm", binNum(num))
+
+
+// Find position of the only set bit
+
+
+function binNum(n) {
+
+}
+
+let num = 647;
+console.log("binNUm", binNum(num))
