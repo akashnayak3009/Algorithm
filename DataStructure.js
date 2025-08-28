@@ -2031,10 +2031,208 @@
 
 // Find position of the only set bit
 
+// function binNum(n) {
+//     let count = 0;
+//     let num = n;
+//     while (n > 0) {
+//         if ((n & 1) === 1 ) {
+//         count += 1
+//         }
+//         n = n >> 1;
+//     }
+//     return count === 1 ? num : "-1"
+// }
 
-function binNum(n) {
+// let num = 14;
+// console.log("binNUm", binNum(num))
 
+// Add two binary string.
+
+// function binNum(a, b) {
+
+//     let num1 = a.trim();
+//     let num2 = b.trim();
+//       let sum = BigInt("0b" + num1) + BigInt("0b" + num2);
+//     return sum.toString(2);
+
+// }
+// let a = " 1010";
+// let b = "0101"
+// console.log("binNUm", binNum(a, b))
+
+// Find XOR of two number without using XOR operator
+
+// function binNum(a, b) {
+
+//     return  (a | b) & (~a | ~b)
+// }
+// let a = 2;
+// let b = 3;
+// console.log("binNUm", binNum(a, b))
+
+// Check if two numbers are equal without using arithmetic and comparison operators
+
+// function binNum(a, b) {
+//     if ((a ^ b) != 0) {
+//     return "Not same"
+//     } else {
+//         return "Same"
+// }
+// }
+// let a = 2;
+// let b = 2;
+// console.log("binNUm", binNum(a, b))
+
+// Swap of two number
+
+// function binNum(a, b) {
+//     let c = 0;
+//     c = a;
+//     a = b;
+//     b = c;
+
+//     return {a , b}
+// }
+// let a = 2;
+// let b = 5;
+// console.log("binNUm", binNum(a, b))
+
+// Multiplication of two number in the russian peasant
+
+// function binNum(a, b) {
+
+//     let result = 0;
+
+//     while (b > 0) {
+//         if (b & 1) {
+//             result += a;
+//         }
+//         a <<= 1;
+//         b >>= 1;
+//     }
+//     return result
+// }
+// let a = 2;
+// let b = 5;
+// console.log("binNUm", binNum(a, b))
+
+
+// Find the most significant number of given number
+
+// Multiplication of two number in the russian peasant
+
+// function binNum(n) {
+//     let msb = 0;
+
+//     while (n > 1) {
+//         n = n >> 1;
+//         msb += 1;
+//     }
+//     return 1 << msb;
+// }
+// let b = 127;
+// console.log("binNUm", binNum(b))
+
+// Rightmost bit of the number
+// function binNum(n) {
+//     let msb = 0;
+
+//     while (n > 1) {
+//         if ((n & 1) !== 0) {
+//         break;
+//         } else {
+//             n = n >> 1
+//             msb += 1;
+//         }
+//     }
+//     return 1 << msb;
+// }
+// let b = 12;
+// console.log("binNUm", binNum(b))
+
+// count set bits
+
+// function binNum(n) {
+//     let msb = 0;
+
+//     while (n) {
+//         if ((n & 1) !== 0) {
+//             msb += 1;
+//         }
+//         n = n >> 1
+//     }
+
+//     return msb;
+// }
+// let b = 64;
+// console.log("binNUm", binNum(b))
+
+// Rotate bit of number
+// function binNum(n, p) {
+
+//     p = p % 32;
+
+//     let left = (n << p) | (n >>> (32 - p))
+//     let right = (n >>> p) | (n << (32 - p))
+
+//     return [left >>> 0, right >>> 0]
+// }
+// let b = 28;
+// let pos = 2;
+// console.log("binNUm", binNum(b, pos))
+
+
+// Find the smallest number of three number
+
+// function smallNum(a, b, c){
+//     let count = 0;
+//     while (a > 0 && b > 0 && c > 0) {
+//         a--;
+//         b--;
+//         c--;
+//         count += 1;
+//     }
+//     return count;
+// }
+
+// let a = 9;
+// let b = 10;
+// let c = 5;
+// console.log("smallNum", smallNum(a, b, c))
+
+// Smallest power of 2 greater than or equal to n
+
+// function smallNum(n){
+
+//     let msb = 0;
+//     while (n) {
+//        msb += 1;
+//         n = n >> 1;
+//     }
+//     console.log("msb0", msb)
+//     return 1 << msb;
+// }
+
+// let a = 5;
+// console.log("smallNum", smallNum(a))
+
+// Find parity of number means how many o and 1
+
+function smallNum(n){
+
+    let zeroes = 0;
+    let ones = 0;
+    while (n) {
+        if ((n & 1) === 1) {
+            ones += 1;
+        } else {
+            zeroes += 1;
+        }
+
+        n = n >> 1;
+    }
+    return {zeroes, ones}
 }
 
-let num = 647;
-console.log("binNUm", binNum(num))
+let a = 5;
+console.log("smallNum", smallNum(a))
