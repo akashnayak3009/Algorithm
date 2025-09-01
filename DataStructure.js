@@ -2218,21 +2218,39 @@
 
 // Find parity of number means how many o and 1
 
-function smallNum(n){
+// function smallNum(n){
 
-    let zeroes = 0;
-    let ones = 0;
-    while (n) {
-        if ((n & 1) === 1) {
-            ones += 1;
-        } else {
-            zeroes += 1;
-        }
+//     let zeroes = 0;
+//     let ones = 0;
+//     while (n) {
+//         if ((n & 1) === 1) {
+//             ones += 1;
+//         } else {
+//             zeroes += 1;
+//         }
 
-        n = n >> 1;
-    }
-    return {zeroes, ones}
-}
+//         n = n >> 1;
+//     }
+//     return {zeroes, ones}
+// }
 
-let a = 5;
-console.log("smallNum", smallNum(a))
+// let a = 5;
+// console.log("smallNum", smallNum(a))
+
+// Find the palindrome of number
+
+// function smallNum(n) {
+
+//     let rev = 0;
+//     let num = n;
+    
+//     while (num > 0) {
+//         rev = (rev << 1) | (num & 1)
+//         num >>= 1
+//     }
+
+//     return rev === n;
+// }
+
+// let a = 5;
+// console.log("smallNum", smallNum(a))
