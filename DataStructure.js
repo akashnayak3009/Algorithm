@@ -2254,3 +2254,64 @@
 
 // let a = 5;
 // console.log("smallNum", smallNum(a))
+
+// Find the palindrome of number
+
+// function smallNum(n) {
+//     let prev;
+    
+//     while (n > 0) {
+
+//          prev = n & 1;
+
+//         n = n >> 1;
+//         let cur = n & 1;
+
+//         if (prev === cur && prev === 1) return false
+        
+//        prev =cur
+
+//     }
+
+//     return true;
+// }
+
+// let a = 7;
+// console.log("smallNum", smallNum(a))
+
+// find the gcd of two number
+
+// function gcd(a, b) {
+//     if (a === b) return a;
+
+//     return a >b ? gcd (a-b, b): gcd(a, b-a)
+// }
+// let nq = 50;
+// let gn = 25;
+// console.log("gcd", gcd(nq, gn))
+
+
+// Copy set bits in a range
+
+// function setBit(a, b, l, r) {
+//    if (l < 1 || r > 32)
+//             return x;
+
+    
+//     for (let i = l; i <= r; i++){
+
+//         var mask = 1 << (i - 1);
+
+//         if ((b & mask) !== 0) {
+//             a = a | mask;
+//         }
+//     }
+//     return a;
+    
+// }
+
+// let x = 8, y = 7, l = 1, r = 2;
+
+// console.log("setBit", setBit(x,y,l,r))
+
+
