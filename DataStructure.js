@@ -2315,3 +2315,34 @@
 // console.log("setBit", setBit(x,y,l,r))
 
 
+// Sum of all natural number
+
+// function numNo(n) {
+//     if (n <= 0) return 0;
+
+//     return n + numNo(n-1)
+// }
+
+// console.log(numNo(5))
+
+
+// factorial of the nummber
+
+// function numNo(n) {
+//     if (n <= 0) return 1;
+
+//     return n * numNo(n-1)
+// }
+
+// console.log(numNo(5))
+
+//fibonacci series
+
+
+function numNo(n) {
+    if (n <= 1) return n;
+
+    return numNo(n-1) + numNo(n-2)
+}
+
+console.log(numNo(14))
