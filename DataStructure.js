@@ -2339,10 +2339,48 @@
 //fibonacci series
 
 
-function numNo(n) {
-    if (n <= 1) return n;
+// function numNo(n) {
+//     if (n <= 1) return n;
 
-    return numNo(n-1) + numNo(n-2)
+//     return numNo(n-1) + numNo(n-2)
+// }
+
+// console.log(numNo(14))
+
+
+// find a^n in recurrssion
+
+// function recur(a, n) {
+//     if (n == 1) {
+//         return a;
+//     }
+//     return a * recur(a, n-1)
+// }
+
+// console.log(recur(2,4))
+
+//Generate the valid set parenthesis
+
+function generateParent(n) {
+    let result = [];
+
+    const backtracking = (current, open, close) => {
+
+        if (current.length === n * 2) {
+            return result.push(current);
+        }
+
+        if (open < n) {
+            backtracking(current + "(", open + 1, close)
+        }
+
+        if (close < open) {
+            backtracking(current + ")", open , close+ 1)
+        }
+        
+    }
+    backtracking("", 0,0)
+    return result;
 }
 
-console.log(numNo(14))
+console.log("generatePrent", generateParent(3))
