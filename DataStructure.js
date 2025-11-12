@@ -1378,7 +1378,7 @@
 // Ex:
 // input: abcab
 // Output: a
- 
+
 // Input: decbed
 // Output: e
 
@@ -1502,7 +1502,7 @@
 //         }
 //         result.push(rows);
 //     }
-    
+
 //     return result;
 // }
 // let matrix1 = [
@@ -1560,7 +1560,7 @@
 //         result.push(sum);
 //     }
 //     return result;
-    
+
 // }
 
 // let matrix1 = [
@@ -1583,7 +1583,7 @@
 //         const stars = 2 * i + 1; // Number of stars in current row
 //         const leftSpaces = Math.floor((cols - stars) / 2);
 //         const rightSpaces = cols - stars - leftSpaces; // Ensure total length equals `cols`
-        
+
 //         const row = ' '.repeat(leftSpaces) + '*'.repeat(stars) + ' '.repeat(rightSpaces);
 //         totalRowStar.push(row);
 //     }
@@ -1652,7 +1652,7 @@
 
 //      result.push(line);
 //     }
-    
+
 //     return result;
 // }
 
@@ -1695,14 +1695,14 @@
 // Print sparse matrix if the half of the number of matrix is zero than it is soarse
 
 // function sparseMatrix(matrix) {
-    
+
 //     totalNum = 0;
 //     zeroes = 0;
 
 //     rowsLength = matrix.length;
 
 //     for(let i = 0; i <= rowsLength - 1; i++) {
-        
+
 //         for (let j = 0; j <= matrix[i].length-1; j++){
 //             if (matrix[i][j] <= 0) {
 //                 zeroes += 1;
@@ -1717,7 +1717,7 @@
 // clockwise 90 degree rotation of matrix
 
 // function rotateClockMatrix(matrix) {
-    
+
 //     let rowsLength = matrix.length;
 //     let result = [];
 
@@ -1761,7 +1761,7 @@
 //     }
 
 //     return result
-    
+
 // }
 
 // let matrix1 = [
@@ -1927,7 +1927,7 @@
 //         n >>= 1;
 //     }
 //     return result;
-    
+
 // }
 // let num = 5;
 // let rootNumber = 7;
@@ -1937,7 +1937,7 @@
 // Find sum subset of the array which is equal to a given number.
 
 // function sumArr(arr, k) {
-    
+
 // }
 
 // const n = 12;
@@ -2243,7 +2243,7 @@
 
 //     let rev = 0;
 //     let num = n;
-    
+
 //     while (num > 0) {
 //         rev = (rev << 1) | (num & 1)
 //         num >>= 1
@@ -2259,7 +2259,7 @@
 
 // function smallNum(n) {
 //     let prev;
-    
+
 //     while (n > 0) {
 
 //          prev = n & 1;
@@ -2268,7 +2268,7 @@
 //         let cur = n & 1;
 
 //         if (prev === cur && prev === 1) return false
-        
+
 //        prev =cur
 
 //     }
@@ -2297,7 +2297,7 @@
 //    if (l < 1 || r > 32)
 //             return x;
 
-    
+
 //     for (let i = l; i <= r; i++){
 
 //         var mask = 1 << (i - 1);
@@ -2307,7 +2307,7 @@
 //         }
 //     }
 //     return a;
-    
+
 // }
 
 // let x = 8, y = 7, l = 1, r = 2;
@@ -2361,26 +2361,107 @@
 
 //Generate the valid set parenthesis
 
-function generateParent(n) {
-    let result = [];
+// function generateParent(n) {
+//     let result = [];
 
-    const backtracking = (current, open, close) => {
+//     const backtracking = (current, open, close) => {
 
-        if (current.length === n * 2) {
-            return result.push(current);
-        }
+//         if (current.length === n * 2) {
+//             return result.push(current);
+//         }
 
-        if (open < n) {
-            backtracking(current + "(", open + 1, close)
-        }
+//         if (open < n) {
+//             backtracking(current + "(", open + 1, close)
+//         }
 
-        if (close < open) {
-            backtracking(current + ")", open , close+ 1)
-        }
-        
+//         if (close < open) {
+//             backtracking(current + ")", open , close+ 1)
+//         }
+
+//     }
+//     backtracking("", 0,0)
+//     return result;
+// }
+
+// console.log("generatePrent", generateParent(3))
+
+// Function to do magic square
+
+function findMagicSquare(matrix) {
+  if (!Array.isArray(matrix) || matrix.length === 0) {
+    return { magicSquare: false, sumNum: null, message: "It is not an array" };
+  }
+
+  const n = matrix.length;
+  for (let i = 0; i < n; i++) {
+    if (!Array.isArray(matrix[i]) || matrix[i].length !== n) {
+      return { magicSquare: false, sumNum: null, message: "Not a square matrix" };
     }
-    backtracking("", 0,0)
-    return result;
+  }
+
+  const targetSum = matrix[0].reduce((a, b) => a + b, 0);
+  const max = n * n;
+  const seen = new Set();
+
+  // Uniqueness check
+  for (let r = 0; r < n; r++) {
+    for (let c = 0; c < n; c++) {
+      const v = matrix[r][c];
+      if (!Number.isInteger(v) || v < 1 || v > max) {
+        return { magicSquare: false, sumNum: null, message: "Invalid number in matrix" };
+      }
+      seen.add(v);
+    }
+  }
+
+  if (seen.size !== max)
+    return { magicSquare: false, sumNum: null, message: "Duplicate or missing numbers" };
+
+  // Row check
+  for (let r = 0; r < n; r++) {
+    const sum = matrix[r].reduce((a, b) => a + b, 0);
+    if (sum !== targetSum) {
+      return { magicSquare: false, sumNum: null, message: "Row does not have same sum" };
+    }
+  }
+
+  // Column check
+  for (let c = 0; c < n; c++) {
+    let sum = 0;
+    for (let r = 0; r < n; r++) sum += matrix[r][c];
+    if (sum !== targetSum) {
+      return { magicSquare: false, sumNum: null, message: "Column does not have same sum" };
+    }
+  }
+
+  // Diagonal check
+  let mainDiag = 0,
+    antiDiag = 0;
+  for (let d = 0; d < n; d++) {
+    mainDiag += matrix[d][d];
+    antiDiag += matrix[d][n - 1 - d];
+  }
+
+  if (mainDiag !== targetSum || antiDiag !== targetSum) {
+    return { magicSquare: false, sumNum: null, message: "Diagonals do not have same sum" };
+  }
+
+  return { magicSquare: true, sumNum: targetSum, message: "MAGIC MAGIC SQUARE!" };
 }
 
-console.log("generatePrent", generateParent(3))
+
+const magicMatrix = [
+  [2,7,6],
+  [9,5,1],
+  [4,3,8]
+];
+console.log(findMagicSquare(magicMatrix));
+// { magicSquare: true, sumNum: 15, message: "MAGIC MAGIC SQUARE!" }
+
+const notMagic = [
+  [1,2,3],
+  [4,5,6],
+  [7,8,9]
+];
+console.log(findMagicSquare(notMagic));
+// { magicSquare: false, sumNum: null, message: "Row does not have same sum" }
