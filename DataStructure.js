@@ -2387,81 +2387,111 @@
 
 // Function to do magic square
 
-function findMagicSquare(matrix) {
-  if (!Array.isArray(matrix) || matrix.length === 0) {
-    return { magicSquare: false, sumNum: null, message: "It is not an array" };
+// function findMagicSquare(matrix) {
+//   if (!Array.isArray(matrix) || matrix.length === 0) {
+//     return { magicSquare: false, sumNum: null, message: "It is not an array" };
+//   }
+
+//   const n = matrix.length;
+//   for (let i = 0; i < n; i++) {
+//     if (!Array.isArray(matrix[i]) || matrix[i].length !== n) {
+//       return { magicSquare: false, sumNum: null, message: "Not a square matrix" };
+//     }
+//   }
+
+//   const targetSum = matrix[0].reduce((a, b) => a + b, 0);
+//   const max = n * n;
+//   const seen = new Set();
+
+//   // Uniqueness check
+//   for (let r = 0; r < n; r++) {
+//     for (let c = 0; c < n; c++) {
+//       const v = matrix[r][c];
+//       if (!Number.isInteger(v) || v < 1 || v > max) {
+//         return { magicSquare: false, sumNum: null, message: "Invalid number in matrix" };
+//       }
+//       seen.add(v);
+//     }
+//   }
+
+//   if (seen.size !== max)
+//     return { magicSquare: false, sumNum: null, message: "Duplicate or missing numbers" };
+
+//   // Row check
+//   for (let r = 0; r < n; r++) {
+//     const sum = matrix[r].reduce((a, b) => a + b, 0);
+//     if (sum !== targetSum) {
+//       return { magicSquare: false, sumNum: null, message: "Row does not have same sum" };
+//     }
+//   }
+
+//   // Column check
+//   for (let c = 0; c < n; c++) {
+//     let sum = 0;
+//     for (let r = 0; r < n; r++) sum += matrix[r][c];
+//     if (sum !== targetSum) {
+//       return { magicSquare: false, sumNum: null, message: "Column does not have same sum" };
+//     }
+//   }
+
+//   // Diagonal check
+//   let mainDiag = 0,
+//     antiDiag = 0;
+//   for (let d = 0; d < n; d++) {
+//     mainDiag += matrix[d][d];
+//     antiDiag += matrix[d][n - 1 - d];
+//   }
+
+//   if (mainDiag !== targetSum || antiDiag !== targetSum) {
+//     return { magicSquare: false, sumNum: null, message: "Diagonals do not have same sum" };
+//   }
+
+//   return { magicSquare: true, sumNum: targetSum, message: "MAGIC MAGIC SQUARE!" };
+// }
+
+
+// const magicMatrix = [
+//   [2,7,6],
+//   [9,5,1],
+//   [4,3,8]
+// ];
+// console.log(findMagicSquare(magicMatrix));
+// // { magicSquare: true, sumNum: 15, message: "MAGIC MAGIC SQUARE!" }
+
+// const notMagic = [
+//   [1,2,3],
+//   [4,5,6],
+//   [7,8,9]
+// ];
+// console.log(findMagicSquare(notMagic));
+// // { magicSquare: false, sumNum: null, message: "Row does not have same sum" }
+
+
+// Check the maximum frequency of the number in the array
+
+const a = [3, 4, 5, 5, 5, 4, 3, 5]
+
+const checkFreq = (b) => {
+
+  if (!Array.isArray(b) || b.length === 0) {
+    return "Not an array'"
   }
 
-  const n = matrix.length;
-  for (let i = 0; i < n; i++) {
-    if (!Array.isArray(matrix[i]) || matrix[i].length !== n) {
-      return { magicSquare: false, sumNum: null, message: "Not a square matrix" };
-    }
+  const keys = new Map();
+  console.log("keys",keys)
+  for (let arr of b) {
+   keys.set(arr, (keys.get(arr) || 0) + 1)
   }
+  let maxKey = null;
+  let maxValue = 0;
 
-  const targetSum = matrix[0].reduce((a, b) => a + b, 0);
-  const max = n * n;
-  const seen = new Set();
-
-  // Uniqueness check
-  for (let r = 0; r < n; r++) {
-    for (let c = 0; c < n; c++) {
-      const v = matrix[r][c];
-      if (!Number.isInteger(v) || v < 1 || v > max) {
-        return { magicSquare: false, sumNum: null, message: "Invalid number in matrix" };
-      }
-      seen.add(v);
-    }
-  }
-
-  if (seen.size !== max)
-    return { magicSquare: false, sumNum: null, message: "Duplicate or missing numbers" };
-
-  // Row check
-  for (let r = 0; r < n; r++) {
-    const sum = matrix[r].reduce((a, b) => a + b, 0);
-    if (sum !== targetSum) {
-      return { magicSquare: false, sumNum: null, message: "Row does not have same sum" };
-    }
-  }
-
-  // Column check
-  for (let c = 0; c < n; c++) {
-    let sum = 0;
-    for (let r = 0; r < n; r++) sum += matrix[r][c];
-    if (sum !== targetSum) {
-      return { magicSquare: false, sumNum: null, message: "Column does not have same sum" };
-    }
-  }
-
-  // Diagonal check
-  let mainDiag = 0,
-    antiDiag = 0;
-  for (let d = 0; d < n; d++) {
-    mainDiag += matrix[d][d];
-    antiDiag += matrix[d][n - 1 - d];
-  }
-
-  if (mainDiag !== targetSum || antiDiag !== targetSum) {
-    return { magicSquare: false, sumNum: null, message: "Diagonals do not have same sum" };
-  }
-
-  return { magicSquare: true, sumNum: targetSum, message: "MAGIC MAGIC SQUARE!" };
+  for (let [key, value] of keys) {
+    if (value > maxValue) {
+      maxKey = key;
+      maxValue = value;
+   }
+ }
+  return {keys, maxKey, maxValue}
 }
 
-
-const magicMatrix = [
-  [2,7,6],
-  [9,5,1],
-  [4,3,8]
-];
-console.log(findMagicSquare(magicMatrix));
-// { magicSquare: true, sumNum: 15, message: "MAGIC MAGIC SQUARE!" }
-
-const notMagic = [
-  [1,2,3],
-  [4,5,6],
-  [7,8,9]
-];
-console.log(findMagicSquare(notMagic));
-// { magicSquare: false, sumNum: null, message: "Row does not have same sum" }
+console.log("Maximum freq", checkFreq(a))
