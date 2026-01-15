@@ -2469,29 +2469,168 @@
 
 // Check the maximum frequency of the number in the array
 
-const a = [3, 4, 5, 5, 5, 4, 3, 5]
+// const a = [3, 4, 5, 5, 5, 4, 3, 5]
 
-const checkFreq = (b) => {
+// const checkFreq = (b) => {
 
-  if (!Array.isArray(b) || b.length === 0) {
-    return "Not an array'"
-  }
+//   if (!Array.isArray(b) || b.length === 0) {
+//     return "Not an array'"
+//   }
 
-  const keys = new Map();
-  console.log("keys",keys)
-  for (let arr of b) {
-   keys.set(arr, (keys.get(arr) || 0) + 1)
-  }
-  let maxKey = null;
-  let maxValue = 0;
+//   const keys = new Map();
+//   console.log("keys",keys)
+//   for (let arr of b) {
+//    keys.set(arr, (keys.get(arr) || 0) + 1)
+//   }
+//   let maxKey = null;
+//   let maxValue = 0;
 
-  for (let [key, value] of keys) {
-    if (value > maxValue) {
-      maxKey = key;
-      maxValue = value;
-   }
- }
-  return {keys, maxKey, maxValue}
+//   for (let [key, value] of keys) {
+//     if (value > maxValue) {
+//       maxKey = key;
+//       maxValue = value;
+//    }
+//  }
+//   return {keys, maxKey, maxValue}
+// }
+
+// console.log("Maximum freq", checkFreq(a))
+
+
+// function alternate(arr){
+//     let b = [];
+//   for (let a = 0; a < arr.length; a++){
+
+//     console.log(a % 2 === 0)
+//         if (a % 2 === 0){
+//             b.push(arr[a])
+//         }
+
+//     }
+//     return b;
+// }
+
+// let ab = [10, 20,0,40]
+
+// console.log("alternate", alternate(ab));
+
+
+// const arr = [16, 17, 4, 3, 5, 2];
+
+// const leaderFun = (arr) => {
+//     if (!arr.length) return;
+
+//     let result = []
+
+//     if (arr.length === 1) {
+//         return arr;
+//     };
+
+//     for (let i = 0; i < arr.length; i++) {
+//         let leader = true;
+//         for (let j = i + 1; j < arr.length; j++) {
+
+//             if (arr[j] > arr[i]) {
+//                 leader = false;
+//                 break;
+//             }
+
+//         }
+//         if (leader) {
+//             result.push(arr[i])
+//         }
+//     }
+//     return result;
+// }
+
+// const leaderFun = (arr) => {
+//         if (!arr.length) return;
+
+//     let result = []
+
+//     if (arr.length === 1) {
+//         return arr;
+//     };
+
+//     let maxright =arr[arr.length - 1]
+
+//     result.push(maxright);
+
+//     for (let i = arr.length - 2; i >= 0; i--){
+//         if (arr[i] > maxright) {
+//             maxright = arr[i];
+//             result.push(maxright);
+//         }
+//     }
+//     result.reverse();
+//     return result;
+// }
+
+// console.log("Result", leaderFun(arr));
+
+// const arr = [1, 2, 2, 3, 4, 4, 4, 5, 5];
+
+// const removeDuplicates = (arr) => {
+//     let len = arr.length;
+//     if (len < 0) return arr;
+//     let result = []
+//     for (let i = 0; i < len; i++) {
+//         if (arr[i] !== arr[i + 1]) {
+//             result.push(arr[i])
+//         }
+//     }
+//     return result;
+
+// }
+// const newSize = removeDuplicates(arr);
+
+// console.log(newSize);
+
+// const arr = [1, 2, 0, 4, 3, 0, 5, 0];
+
+// const pushZerosToEnd = (arr) => {
+//     if (arr.length < 0) return arr;
+//     let count = 0;
+//     let len = arr.length;
+//     for (let i = 0; i < len; i++) {
+//         if (arr[i] !== 0) {
+//             [arr[i], arr[count]] = [arr[count], arr[i]]
+//             count++
+//         }
+//     }
+//     return arr;
+// }
+// const result = pushZerosToEnd(arr);
+//  console.log(result)
+
+
+var arr = [ 21, 33, 9, 45, 63 ];
+var n = arr.length;
+var k = 6;
+
+const minOps = (a, n, k) => {
+    let max = 0;
+    for (let i = 0; i < n; i++){
+        if (a[i] > max) {
+            max = a[i];
+        }
+
+    }
+
+    let res = 0;
+
+    for (let i = 0; i < n; i++) { 
+        if ((max - a[i]) % k !== 0) {
+            return -1;
+        }
+        else {
+            res += (max - a[[i]]) / k;
+        }
+
+    }
+    return res;
 }
+const result = minOps(arr, n, k);
+console.log(result);
 
-console.log("Maximum freq", checkFreq(a))
+
