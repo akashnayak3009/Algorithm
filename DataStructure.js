@@ -2604,33 +2604,79 @@
 //  console.log(result)
 
 
-var arr = [ 21, 33, 9, 45, 63 ];
-var n = arr.length;
-var k = 6;
+// var arr = [ 21, 33, 9, 45, 63 ];
+// var n = arr.length;
+// var k = 6;
 
-const minOps = (a, n, k) => {
-    let max = 0;
-    for (let i = 0; i < n; i++){
-        if (a[i] > max) {
-            max = a[i];
+// const minOps = (a, n, k) => {
+//     let max = 0;
+//     for (let i = 0; i < n; i++){
+//         if (a[i] > max) {
+//             max = a[i];
+//         }
+
+//     }
+
+//     let res = 0;
+
+//     for (let i = 0; i < n; i++) {
+//         if ((max - a[i]) % k !== 0) {
+//             return -1;
+//         }
+//         else {
+//             res += (max - a[[i]]) / k;
+//         }
+
+//     }
+//     return res;
+// }
+// const result = minOps(arr, n, k);
+// console.log(result);
+
+// const arr = [10, 5, 3, 4, 0, 5, 6];
+// const k = 3;
+
+// const duplicateRows = (arr, k) => {
+//     if (!arr.length) return "NO";
+//     const set = new Set();
+
+//     for (let i = 0; i < arr.length; i++){
+
+//         if (set.has(arr[i])) return "Yes";
+
+//         set.add(arr[i]);
+//         if (i > k) {
+//             set.delete(arr[i-k])
+//         }
+//     }
+//     return "NO";
+
+//     console.log(set);
+// }
+
+// const result = duplicateRows(arr, k);
+// console.log(result);
+
+const arr = [1,2,2,1];
+
+const arrangeRows = (a) => {
+    if (!a.length) return a;
+
+    for (let i = 0; i < a.length; i++)
+    {
+        if (i % 2 !== 0) {
+            if (a[i] < a[i - 1]) {
+                  [a[i], a[i-1]] = [a[i-1], a[i]]
+            }
+            
+             if (a[i] < a[i + 1]) {
+                  [a[i], a[i+1]] = [a[i+1], a[i]]
+              }
         }
-
     }
-
-    let res = 0;
-
-    for (let i = 0; i < n; i++) { 
-        if ((max - a[i]) % k !== 0) {
-            return -1;
-        }
-        else {
-            res += (max - a[[i]]) / k;
-        }
-
-    }
-    return res;
+    return a;
 }
-const result = minOps(arr, n, k);
-console.log(result);
 
+const result = arrangeRows(arr);
+console.log(result);
 
