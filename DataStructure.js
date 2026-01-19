@@ -2657,26 +2657,55 @@
 // const result = duplicateRows(arr, k);
 // console.log(result);
 
-const arr = [1,2,2,1];
+// const arr = [1,2,2,1];
 
-const arrangeRows = (a) => {
-    if (!a.length) return a;
+// const arrangeRows = (a) => {
+//     if (!a.length) return a;
 
-    for (let i = 0; i < a.length; i++)
-    {
-        if (i % 2 !== 0) {
-            if (a[i] < a[i - 1]) {
-                  [a[i], a[i-1]] = [a[i-1], a[i]]
-            }
+//     for (let i = 0; i < a.length; i++)
+//     {
+//         if (i % 2 !== 0) {
+//             if (a[i] < a[i - 1]) {
+//                   [a[i], a[i-1]] = [a[i-1], a[i]]
+//             }
             
-             if (a[i] < a[i + 1]) {
-                  [a[i], a[i+1]] = [a[i+1], a[i]]
-              }
+//              if (a[i] < a[i + 1]) {
+//                   [a[i], a[i+1]] = [a[i+1], a[i]]
+//               }
+//         }
+//     }
+//     return a;
+// }
+
+// const result = arrangeRows(arr);
+// console.log(result);
+
+
+// const arr = [1, 4, 5, 3, 2];
+// const subarraySum = (a) => {
+//     let n = a.length;
+//     let result = 0;
+//     for (let i = 0; i < n; i++){
+//         result += a[i] * (i + 1) * (n - i);
+//     }
+//     return result;
+// }
+// console.log(subarraySum(arr));
+
+const prices = [100, 180, 260, 310, 40, 535, 695]
+
+const stock = (a) => {
+
+    let result = 0;
+
+    for (let i = 0; i < a.length; i++){
+        if (a[i] < a[i + 1]) {
+            result += a[i+1] - a[i];
         }
     }
-    return a;
-}
 
-const result = arrangeRows(arr);
-console.log(result);
+    return result;
+    
+}
+console.log(stock(prices))
 
