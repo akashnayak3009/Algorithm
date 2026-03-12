@@ -2692,20 +2692,347 @@
 // }
 // console.log(subarraySum(arr));
 
-const prices = [100, 180, 260, 310, 40, 535, 695]
+// const prices = [100, 180, 260, 310, 40, 535, 695]
 
-const stock = (a) => {
+// const stock = (a) => {
 
-    let result = 0;
+//     let result = 0;
 
-    for (let i = 0; i < a.length; i++){
-        if (a[i] < a[i + 1]) {
-            result += a[i+1] - a[i];
+//     for (let i = 0; i < a.length; i++){
+//         if (a[i] < a[i + 1]) {
+//             result += a[i+1] - a[i];
+//         }
+//     }
+
+//     return result;
+    
+// }
+// console.log(stock(prices))
+
+
+// const arr = [8, 2, 4, 5, 3, 7, 1]
+
+// const missing = (a) => {
+//     let m = null;
+
+//     const sortarr = arr.sort((a , b) => a-b)
+
+//     for (let i = 0; i < a.length; i++){
+//         const neg = (sortarr[i + 1] - sortarr[i]) !== 1;
+
+//         if (neg) {
+//             m = sortarr[i] + 1;
+//             break;
+//         }
+
+//     }
+//     return m;
+// }
+
+// console.log(missing(arr))
+
+// const arr = [8, 2, 4, 5, 5, 3, 7, 1]
+
+// const missingAndRep = (a) => {
+//     let m = null;
+//     let n = null;
+
+//     const sortarr = a.sort((a , b) => a-b)
+
+//     for (let i = 0; i < a.length; i++){
+//         if (i === sortarr.length) break;
+//         const neg = (sortarr[i + 1] - sortarr[i]) !== 1;
+//         const rep =(sortarr[i + 1] - sortarr[i]) === 0;
+
+//         if (neg) {
+//             m = sortarr[i] + 1;
+//         }
+//         if (rep) {
+//             n= sortarr[i]
+//         }
+
+//         if (neg & rep) break;
+
+//     }
+//     return {
+//         repeated: n,
+//         missing: m
+//     };
+// }
+
+// console.log(missingAndRep(arr))
+
+
+// const arr = [1, 5, 1, 2, 3, 4]
+
+// const findDuplicate = (a) => {
+//     if (a.length < 0) return;
+//     let normalSUm = a.reduce((a,b) => a+b, 0)
+//     let arrSum = a.length * (a.length - 1) / 2;
+
+//     return normalSUm - arrSum;
+// }
+// console.log(findDuplicate(arr));
+
+// const arr = [2, 3, -8, 7, -1, 2, 3];
+
+// const maxSubarraySum = (arr) => {
+//     let a = arr.length
+//     if (a < 0) return;
+
+//     let maxNum = arr[0];
+//     let result = arr[0];
+
+//     for (let i = 1; i < a; i++){
+//         maxNum = Math.max(maxNum + arr[i], arr[i]);
+
+//         result = Math.max(result, maxNum );
+//     }
+//     return result;
+// }
+
+// console.log(maxSubarraySum(arr));
+
+// const arr = [-7, 1, 5, -4, 3, 0];
+
+// const equilibrium = (arr) => {
+
+//     const len = arr.length;
+//     console.log("🚀 ~ equilibrium ~ len:", len)
+
+//     let equilibrium = 0;
+
+//     let prefix = 0;
+//     let suffix = 0;
+//     for (let i = 0; i < len; i++){
+//         if (len % 2 === 0) {
+//                 if (i < (len / 2)) {
+//                  prefix += arr[i];
+//             }
+//             if (i >= (len  / 2 )) {
+//                  suffix += arr[i]
+//             }
+//             if (prefix === suffix) {
+//                equilibrium = arr[((len)/2) -1]
+//             } else {
+//                 equilibrium = -1
+//             }
+            
+//         } else {
+//             if (i < (len - 1) / 2) {
+//                  prefix += arr[i];
+//             }
+//             if (i > ((len - 1) / 2 )) {
+//                  suffix += arr[i]
+//             }
+//             if (prefix === suffix) {
+//                equilibrium = arr[(len-1)/2]
+//             } else {
+//                 equilibrium = -1
+//             }
+            
+//         }
+//     }
+//     return equilibrium;
+    
+// }
+
+// console.log(equilibrium(arr));
+
+
+// const arr = [-7, 1, 5, -4, 3, 0];
+// const target = -1;
+
+// const sumPair = (arr, target) => {
+//     const setNum = new Set();
+
+//     for (num of arr) {
+//         let complement = target - num;
+//         if (setNum.has(complement)) {
+//             return true;
+//         }
+//         setNum.add(num)
+//     }
+
+//     return false;
+// }
+
+// console.log(sumPair(arr, target))
+
+
+// const arrangeI = (arr) =>{
+//     const len = arr.length;
+//     let result = [];
+//     for (let i = 0; i < len; i++) {
+//         result[i] = i;
+//     }
+
+//     for (let i = 0; i < len; i++){
+//         if (!arr.includes(result[i])) [
+//             result[i] = -1
+//         ]
+//     }
+//     return result;
+// }
+
+// const arr = [-1, -1, 6, 1, 9, 3, 2, -1, 4, -1];
+
+// console.log(arrangeI(arr))
+
+// let arr = [10, 11, 12];
+// let idx = [1, 0, 2];
+
+// const arrange = (arr, idx) => {
+//     if (arr.length !== idx.length) return;
+//     let result = [];
+//     let len = arr.length;
+
+//     for (let i = 0; i < len; i++){
+        
+//         result[i] = arr[idx[i]];
+//     }
+
+//     return result;
+// }
+// console.log(arrange(arr,idx))
+
+// let arr = [10, -10, 20, -40];
+// let k = 6;
+
+// const contigousArray = (arr,k) => {
+
+//     let m = [];
+//     let len = arr.length;
+
+//     for (let i = 0; i < len; i++){
+//         m.push(arr[i])
+//         let sum = arr[i];
+//         for (let k = i+1; k < len; k++){
+//             sum = sum + arr[k];
+//             m.push(sum)
+//         }
+//     }
+
+//     m.sort((a, b) => b - a);
+//     console.log(m)
+//     return m[k-1];
+// }
+
+// console.log(contigousArray(arr ,k));
+
+// const arr = [1, 1, 2, 1, 3, 5, 1]
+
+// const maxRepeatNumArr = (arr) => {
+//     const len = arr.length;
+//     const size = len / 2;
+
+//     const obj = {};
+
+//     for (const n of arr)
+//     {
+//         if (!obj[n]) {
+//             obj[n] = 1 ;
+//         } else {
+//             ++obj[n];
+
+//         }
+//     }
+//     console.log(Object.values(obj)[0] > size)
+
+//     const maxSize = Object.values(obj)[0] > size ?  1 : -1;
+//     return maxSize;
+// }
+
+// console.log(maxRepeatNumArr(arr))
+
+// const equalzeroandone = (arr) => {
+//     const len = arr.length;
+//     let size = 0;
+
+//     let preSum = new Map();
+
+//     let sum = 0;
+//     let res = 0;
+
+//     for (let i = 0; i < len; i++) {
+//         sum += (arr[i] === 0) ? -1 : 1;
+
+//         if (sum === 0) {
+//             res = i + 1;
+//         }
+
+//         if (preSum.has(sum)) {
+//             res = Math.max(res, i - preSum.get(sum));
+//         } else {
+//             preSum.set(sum, i);
+//         }
+//     }
+
+//     return res;
+
+// }
+
+// const arr = [1, 0, 1, 1, 1, 0, 0];
+
+// console.log(equalzeroandone(arr));
+
+// let s = "geeksforgeeks"
+ 
+// const nonrepeating = (s) => {
+
+//     const arr = new Array(26).fill(0)
+    
+//     for (let i = 0; i < s.length; i++){
+        
+//         let index = s[i].charCodeAt(0) - "a".charCodeAt(0)
+            
+//             arr[index]++;
+//     }
+    
+//     let first = ''
+//     console.log(s)
+//     for (let j = 0; j < s.length; j++){
+//             let  index = s[j].charCodeAt(0) - "a".charCodeAt(0)
+         
+//          if (arr[index] === 1) {
+//              first = s[j];
+//              break;
+//          }
+//     }
+
+//     return first;
+// }
+
+// console.log("nonrepeating", nonrepeating(s))
+
+function areIsomorphic(s1, s2) {
+
+    const m = {};
+    const n = {};
+
+    for (let i = 0; i < s1.length; ++i){
+        if (!(s1[i] in m)) {
+            m[s1[i]] = i;
+        }
+
+         if (!(s2[i] in n)) {
+            n[s2[i]] = i;
+        }
+
+        if (m[s1[i]] !== n[s2[i]]) {
+            return false;
         }
     }
-
-    return result;
-    
+    return true;
 }
-console.log(stock(prices))
 
+
+// Driver Code
+const s1 = "aaw";
+const s2 = "xxy";
+
+if (areIsomorphic(s1, s2)) {
+    console.log("true");
+} else {
+    console.log("false");
+}
