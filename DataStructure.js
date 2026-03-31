@@ -2668,7 +2668,7 @@
 //             if (a[i] < a[i - 1]) {
 //                   [a[i], a[i-1]] = [a[i-1], a[i]]
 //             }
-            
+
 //              if (a[i] < a[i + 1]) {
 //                   [a[i], a[i+1]] = [a[i+1], a[i]]
 //               }
@@ -2705,7 +2705,7 @@
 //     }
 
 //     return result;
-    
+
 // }
 // console.log(stock(prices))
 
@@ -2817,7 +2817,7 @@
 //             } else {
 //                 equilibrium = -1
 //             }
-            
+
 //         } else {
 //             if (i < (len - 1) / 2) {
 //                  prefix += arr[i];
@@ -2830,11 +2830,11 @@
 //             } else {
 //                 equilibrium = -1
 //             }
-            
+
 //         }
 //     }
 //     return equilibrium;
-    
+
 // }
 
 // console.log(equilibrium(arr));
@@ -2888,7 +2888,7 @@
 //     let len = arr.length;
 
 //     for (let i = 0; i < len; i++){
-        
+
 //         result[i] = arr[idx[i]];
 //     }
 
@@ -2977,23 +2977,23 @@
 // console.log(equalzeroandone(arr));
 
 // let s = "geeksforgeeks"
- 
+
 // const nonrepeating = (s) => {
 
 //     const arr = new Array(26).fill(0)
-    
+
 //     for (let i = 0; i < s.length; i++){
-        
+
 //         let index = s[i].charCodeAt(0) - "a".charCodeAt(0)
-            
+
 //             arr[index]++;
 //     }
-    
+
 //     let first = ''
 //     console.log(s)
 //     for (let j = 0; j < s.length; j++){
 //             let  index = s[j].charCodeAt(0) - "a".charCodeAt(0)
-         
+
 //          if (arr[index] === 1) {
 //              first = s[j];
 //              break;
@@ -3005,34 +3005,85 @@
 
 // console.log("nonrepeating", nonrepeating(s))
 
-function areIsomorphic(s1, s2) {
+// function areIsomorphic(s1, s2) {
 
-    const m = {};
-    const n = {};
+//     const m = {};
+//     const n = {};
 
-    for (let i = 0; i < s1.length; ++i){
-        if (!(s1[i] in m)) {
-            m[s1[i]] = i;
+//     for (let i = 0; i < s1.length; ++i){     
+//         if (!(s1[i] in m)) {
+//             m[s1[i]] = i;
+//         }
+
+//          if (!(s2[i] in n)) {
+//             n[s2[i]] = i;
+//         }
+
+//         if (m[s1[i]] !== n[s2[i]]) {
+//             return false; 
+//         }
+//     }
+//     return true;
+// }
+
+
+// // Driver Code
+// const s1 = "aaw";
+// const s2 = "xxy";
+
+// if (areIsomorphic(s1, s2)) {
+//     console.log("true");
+// } else {
+//     console.log("false");
+// }
+
+;
+
+const managerOrEmployee = (arr) => {
+
+    // Find the managers in the array 
+    const managerMap = new Map();
+
+    for (let i = 0; i < arr.length; i++) {
+        // setting the number of the manager in the array
+        if (!managerMap.has(arr[i][0])) {
+            managerMap.set(arr[i][0], 0)
         }
-
-         if (!(s2[i] in n)) {
-            n[s2[i]] = i;
-        }
-
-        if (m[s1[i]] !== n[s2[i]]) {
-            return false;
+        // possiblity of employee can be manager 
+        if (!managerMap.has(arr[i][1])) {
+            managerMap.set(arr[i][1], 0)
         }
     }
-    return true;
+
+    for (let i = 0; i < arr.length; i++) {
+        // setting the number of the manager in the array
+        if (managerMap.has(arr[i][1])) {
+            managerMap.set(arr[i][1], (managerMap.get(arr[i][1]) || 0) + 1);
+        }
+
+    }
+    console.log("managerMap", managerMap)
+    for (let i = 0; i < arr.length; i++) {
+        // setting the number of the manager in the array
+        const check = managerMap.get(arr[i][0]) > 0;
+        console.log("🚀 ~ managerOrEmployee ~ check:", check)
+        const isSame = arr[i][0] !== arr[i][1];
+        if (check && isSame) {
+            managerMap.set(arr[i][1], managerMap.get(arr[i][1]) + 1);
+        }
+    }
+
+    return managerMap;
 }
 
+let arr = [
+    ["A", "C"],
+    ["B", "C"],
+    ["C", "F"],
+    ["D", "E"],
+    ["E", "F"],
+    ["F", "F"],
+    ["B", "A"]
+];
 
-// Driver Code
-const s1 = "aaw";
-const s2 = "xxy";
-
-if (areIsomorphic(s1, s2)) {
-    console.log("true");
-} else {
-    console.log("false");
-}
+console.log(managerOrEmployee(arr));
