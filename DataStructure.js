@@ -3039,51 +3039,665 @@
 
 ;
 
-const managerOrEmployee = (arr) => {
+// const managerOrEmployee = (arr) => {
 
-    // Find the managers in the array 
-    const managerMap = new Map();
+//     // Find the managers in the array
+//     const managerMap = new Map();
 
-    for (let i = 0; i < arr.length; i++) {
-        // setting the number of the manager in the array
-        if (!managerMap.has(arr[i][0])) {
-            managerMap.set(arr[i][0], 0)
-        }
-        // possiblity of employee can be manager 
-        if (!managerMap.has(arr[i][1])) {
-            managerMap.set(arr[i][1], 0)
-        }
+//     for (let i = 0; i < arr.length; i++) {
+//         // setting the number of the manager in the array
+//         if (!managerMap.has(arr[i][0])) {
+//             managerMap.set(arr[i][0], 0)
+//         }
+//         // possiblity of employee can be manager
+//         if (!managerMap.has(arr[i][1])) {
+//             managerMap.set(arr[i][1], 0)
+//         }
+//     }
+
+//     for (let i = 0; i < arr.length; i++) {
+//         // setting the number of the manager in the array
+//         if (managerMap.has(arr[i][1])) {
+//             managerMap.set(arr[i][1], (managerMap.get(arr[i][1]) || 0) + 1);
+//         }
+
+//     }
+//     console.log("managerMap", managerMap)
+//     for (let i = 0; i < arr.length; i++) {
+//         // setting the number of the manager in the array
+//         const check = managerMap.get(arr[i][0]) > 0;
+//         console.log("🚀 ~ managerOrEmployee ~ check:", check)
+//         const isSame = arr[i][0] !== arr[i][1];
+//         if (check && isSame) {
+//             managerMap.set(arr[i][1], managerMap.get(arr[i][1]) + 1);
+//         }
+//     }
+
+//     return managerMap;
+// }
+
+// let arr = [
+//     ["A", "C"],
+//     ["B", "C"],
+//     ["C", "F"],
+//     ["D", "E"],
+//     ["E", "F"],
+//     ["F", "F"],
+//     ["B", "A"]
+// ];
+
+// console.log(managerOrEmployee(arr));
+
+
+// const consNum = (arr) => {
+
+//     if (arr.length < 0) return "Not found";
+
+//     const add = new Set(arr);
+//     let count = 0;
+//     for (let x of arr) {
+//         if (!add.has(x - 1)) {
+//             count ++
+//         }
+//     }
+//     return count;
+// }
+
+// const arr = [100, 56, 5, 6, 102, 58, 101, 57, 7, 103, 59]
+// console.log("consNum", consNum(arr))
+
+
+// function size(head) {
+//     let length = 0;
+
+//     while (head) {
+//         length ++;
+//         head = head.next;
+//     }
+
+//     return length;
+// }
+
+
+// function middle(head) {
+
+//     let length = size(head);
+
+//     const midIndex = Math.ceil(length / 2);
+
+//     let midNum;
+
+//     while (length--) {
+
+//         if (length === (midIndex - 1)) {
+//             midNum = head.head;
+//         } else {
+//             head = head.next;
+//         }
+//     }
+//     return midNum
+
+// }
+
+// hare and tortoise method
+
+// function middle(head) {
+
+//     let slow = 0;
+//     let fast = 0;
+
+//     while (fast !== null && fast.head !== null) {
+
+//         slow = head.next;
+//         fast = head.next.next;
+//     }
+
+//     return slow
+// }
+
+// function occur(head, k) {
+
+//     let count = 0;
+
+//     while (head) {
+
+//         if (head.head === k) {
+//             count++;
+//         }
+//         head = head.next;
+//     }
+//     return count;
+// }
+
+// class Node {
+//     constructor(value) {
+//         this.data = value;
+//         this.next = null;
+//     }
+
+// }
+
+// function circular(curr, head) {
+//     if (head === null) return;
+//   console.log(curr.data);
+//     if (curr.next == head) return;
+
+//         circular(curr.next, head);
+
+// }
+
+// const head = new Node(10);
+// head.next = new Node(20);
+// head.next.next = new Node(0);
+// head.next.next.next = new Node(40);
+// head.next.next.next.next = new Node(50);
+// head.next.next.next.next.next = head;
+
+// console.log(circular(head, head));
+
+
+// function isCircular(head) {
+
+//       if (!head) {
+//         return true;
+//     }
+
+//     let slow = head;
+//     let fast = head.next;
+//     while (fast && fast.next) {
+
+//         if (slow === fast) {
+//             return true;
+//         }
+
+//         slow = slow.next;
+//         fast = fast.next.next;
+
+//     }
+//     return false;
+// }
+
+
+// Check if the linked list is circular
+// console.log(isCircular(head) ? "Yes" : "No");
+
+// // Making the linked list circular
+// head.next.next.next.next = head;
+
+// Check again if the linked list is circular
+// console.log(isCircular(head) ? "Yes" : "No");
+
+// function noderesult(head) {
+
+//     let result = 0;
+//     let curr = head;
+//     do {
+//         result++;
+//         curr = curr.next;
+//     } while (curr !== head);
+//     return result;
+    
+// }
+
+// function deleteFirst(head) {
+
+//     if (head === null) {
+//         console.log("It has no item")
+//         return null;
+//     }
+
+//     if (head.next === head) {
+//         return head = null;
+//     } else {
+        
+//         head.next.next = head.next;
+//     }
+
+
+//     console.log("head", head)
+    
+// }
+
+// function singletocircular(curr, head) {
+
+//     // if last node, then point next ptr
+//     // to head Node
+//     if (curr.next == null) {
+//         curr.next = head;
+//         return;
+//     }
+    
+//     singletocircular (curr.next, head)
+// }
+
+
+
+
+// class Node {
+//     constructor(value) {
+//         this.data = value;
+//         this.next = null;
+//     }
+// }
+
+// function exchangeNode(head) {
+//     let first = head;
+//     let curr = head;
+//     let last = head;
+    
+//     while (curr.next !== null) {
+//         console.log("🚀 ~ exchangeNode ~ head:", curr)
+
+//         curr = curr.next;
+//         curr = first;
+//     }
+
+//     curr = last;
+//     console.log('curr',curr)
+// }
+
+
+// function printList(head) {
+//     let curr = head;
+
+//     do {
+//         console.log(curr.data + "-->")
+//         curr = curr.next;
+//     }while ( curr !== head)
+// }
+
+
+
+
+// let head = new Node(1);
+// head.next = new Node(2);
+// head.next.next = new Node(3);
+// head.next.next.next = new Node(4);
+
+// // head.next.next.next.next = head;
+
+// console.log(exchangeNode(head));
+// printList(head);
+
+// class Node {
+//     constructor(value) {
+//         this.data = value;
+//         this.next = null;
+//         this.prev = null;
+//     }
+// }
+
+// const deleteFirst = (head) => {
+//     if (head !== null) {
+//         return null;
+//     }
+
+//     let temp = head;
+
+//     head = head.next;
+
+//     if (head !== null) {
+        
+//         head.prev = null;
+//     }
+//     return head;
+// }
+
+// let head = new Node(2);
+// head.next = new Node(3);
+// head.next.prev = head;
+// head.next.next = new Node(4);
+// head.next.next.prev = head.next;
+
+// class Node {
+//     constructor(newData) {
+//         this.data = newData;
+//         this.next = null;
+//     }
+// }
+
+// function reverseList(head) {
+
+//     let curr = head;
+
+//     let prev = null;
+//     let next;
+
+    
+//     while (curr !== null) {
+
+//         next = curr.next;
+//         curr.next = prev;
+
+//         prev = curr;
+//         curr = next;
+        
+//     }
+
+//     return prev;
+// }
+
+// function swapping(node) {
+
+//     if (!node) return;
+
+//     let curr = node;
+    
+//     while (curr.next && curr) {
+
+//         [curr.data, curr.next.data] = [curr.next.data, curr.data];
+        
+//         curr = curr.next.next;
+//     }
+
+//     // Print list (use a separate pointer)
+//     let temp = node;
+//     while (temp) {
+//         console.log(temp.data);
+//         temp = temp.next;
+//     }
+    
+// }
+
+
+// let head = new Node(1);
+// head.next = new Node(2);
+// head.next.next = new Node(3);
+// head.next.next.next = new Node(4);
+// head.next.next.next.next = new Node(5);
+
+// console.log(swapping(head))
+
+
+// class Node{
+//     constructor(value){
+//         this.data = value;
+//         this.next = null;
+//         this.prev = null;
+//     }
+// }
+
+// class BrowserHistory{
+//     constructor(browser) {
+//         this.curr = new Node (browser)
+//     }
+
+//     visit(homePage) {
+
+//         const urlNode = new Node(homePage);
+
+//         urlNode.prev = this.curr;
+
+//         this.curr.next = urlNode;
+
+//         this.curr = urlNode;
+        
+//     }
+
+//     back(step) {
+
+//         let trav = this.curr;
+
+//         while(trav.prev !== null && step > 0){
+//             trav = trav.prev;
+//             step--;
+//         }
+        
+//         this.curr = trav;
+//         return this.curr.data;
+//     }
+
+//     forward(step) {
+
+//         let trav = this.curr;
+
+//         while (trav.next !== null && step > 0) {
+//             trav = trav.next;
+//             step--;
+//         }
+
+//         this.curr = trav;
+//         return this.curr.data;
+//     }
+
+// }
+
+// const homepage = "gfg.org";
+// const obj = new BrowserHistory(homepage);
+
+// obj.visit("google.com");
+// obj.visit("facebook.com");
+// obj.visit("youtube.com");
+
+// console.log(obj.back(1));
+// console.log(obj.back(1));
+// console.log(obj.forward(1));
+
+// obj.visit("linkedin.com");
+
+// console.log(obj.forward(2));
+// console.log(obj.back(2));
+// console.log(obj.back(7));
+
+
+// function removeDuplicate(head) {
+
+//     let curr = head;
+
+//     while (curr.next !== null) {
+//         console.log("curr.dta", curr.data)
+//         console.log("next", curr.next.data)
+//         if (curr.data === curr.next.data) {
+            
+//             curr.next = curr.next.next;
+//         }else{
+//             curr = curr.next;
+//         }
+//     }
+    
+
+// }
+
+
+// function removeDuplicate(head) {
+
+//     const hashKey = new Set();
+//     let prev = null;
+//     let curr = head;
+//     while (curr.next !== null) {
+        
+//         if (hashKey.has(curr.data)) {
+//             prev.next = curr.next;
+//             curr = curr.next;
+            
+//         } else {
+//             hashKey.add(curr.data)
+//             prev = curr
+//             curr = curr.next;
+//         }
+//     }
+
+// }
+// class Node {
+//     constructor(value) {
+//         this.data = value;
+//         this.next = null;
+//     }
+// }
+
+
+// function intersection(head, head1) {
+
+//     let curr = head;
+//     let curr1 = head1;
+
+//     const inter = [];
+
+//     let hashKey = new Set();
+
+//     while (curr !== null) {
+//         if(!hashKey.has(curr.data)){
+//             hashKey.add(curr.data)
+//         }
+//         curr = curr.next;
+//     }
+
+//     while (curr1 !== null) {
+//         if (hashKey.has(curr1.data)) {
+//             inter.push(curr1.data);
+//         }
+
+//         curr1 = curr1.next;
+//     }
+//     return inter;
+// }
+
+
+
+
+// let head = new Node(11);
+// head.next = new Node(12);
+// head.next.next = new Node(1);
+// head.next.next.next = new Node(14);
+// head.next.next.next.next = new Node(15);
+// head.next.next.next.next.next = new Node(2);
+
+// let head1 = new Node(14);
+// head1.next = new Node(12);
+// head1.next.next = new Node(1);
+// head1.next.next.next = new Node(17);
+// head1.next.next.next.next = new Node(15);
+// head1.next.next.next.next.next = new Node(5);
+
+
+// console.log(intersection(head, head1))
+
+// class Node {
+//     constructor(value) {
+//         this.data = value;
+//         this.next = null;
+//     }
+// }
+
+// function splitwise(head) {
+//     let slow = head;
+//     let fast = head;
+
+//     while (fast.next !== head && fast.next.next !== head) {
+//         slow = slow.next;
+//         fast = fast.next.next;
+//     }
+
+//     if (fast.next.next === head)
+//         fast = fast.next;
+    
+
+//     console.log("slow", slow)
+// }
+
+// // Create a circular linked list: 1->2->3->4
+// let head = new Node(1);
+// head.next = new Node(2);
+// head.next.next = new Node(3);
+// head.next.next.next = new Node(4);
+// head.next.next.next.next = head;
+
+// splitwise(head);
+
+
+// class Node {
+//     constructor(value) {
+//         this.data = value;
+//         this.next = null;
+//     }
+// }
+
+// function sortedMerge(head1, head2) {
+//     let curr = new Node(-1);
+
+//     while (head1 !== null && head2 !== null) {
+//         if (head1.data >= head2.data) {
+//             curr.next = head1;
+//             head1 = head1.next;
+//         } else {
+//             curr.next = head2;
+//             head2 = head2.next
+//         }
+
+//         curr = curr.next;
+//     }
+
+//     if (head1 !== null) {
+//         curr.next = head1;
+//     } else {
+//         curr.next = head2;
+//     }
+
+//     return curr.next
+// }
+
+// let head1 = new Node(5);
+// head1.next = new Node(10);
+// head1.next.next = new Node(15);
+// head1.next.next.next = new Node(40);
+
+// let head2 = new Node(2);
+// head2.next = new Node(3);
+// head2.next.next = new Node(20);
+
+// let res = sortedMerge(head1, head2);
+
+
+
+
+class Node {
+    constructor(value){
+        this.data = value;
+        this.next = null;
+        this.prev = null;
     }
-
-    for (let i = 0; i < arr.length; i++) {
-        // setting the number of the manager in the array
-        if (managerMap.has(arr[i][1])) {
-            managerMap.set(arr[i][1], (managerMap.get(arr[i][1]) || 0) + 1);
-        }
-
-    }
-    console.log("managerMap", managerMap)
-    for (let i = 0; i < arr.length; i++) {
-        // setting the number of the manager in the array
-        const check = managerMap.get(arr[i][0]) > 0;
-        console.log("🚀 ~ managerOrEmployee ~ check:", check)
-        const isSame = arr[i][0] !== arr[i][1];
-        if (check && isSame) {
-            managerMap.set(arr[i][1], managerMap.get(arr[i][1]) + 1);
-        }
-    }
-
-    return managerMap;
 }
 
-let arr = [
-    ["A", "C"],
-    ["B", "C"],
-    ["C", "F"],
-    ["D", "E"],
-    ["E", "F"],
-    ["F", "F"],
-    ["B", "A"]
-];
+function insert(head, x) {
 
-console.log(managerOrEmployee(arr));
+    const newNode = new Node(x);
+
+    if (head === null){
+        return newNode;
+    }
+
+    if (x < head.data) {
+        newNode.next = head;
+        head.prev = newNode;
+        return newNode;
+    }
+
+    let curr = head;
+
+    while (curr !== null && curr.next.data < x) {
+        curr = curr.next;
+    }
+
+    newNode.next = curr.next;
+
+    if (curr.next !== null) {
+        curr.next.prev = newNode;
+    }
+
+    curr.next = newNode;
+    newNode.prev = curr;
+
+    return head;
+    
+    
+}
+
+let head = new Node(2);
+head.next = new Node(5);
+head.next.prev = head;
+head.next.next = new Node(7);
+head.next.next.prev = head.next;
+head.next.next.next = new Node(10);
+head.next.next.next.prev = head.next.next;
+
+let x = 9;
